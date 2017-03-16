@@ -1,0 +1,12 @@
+{
+  "name": "maquetacion-base",
+  "version": "1.0.0",
+  "author": "Fco. Javier Puche Victoria",
+  "devDependencies": {
+    "jquery": "^3.1.1",
+    "normalize-scss": "^3.0.3",
+    "flexbox-grid-mixins": "^0.1.3",
+    "mediaqueries-sass-mixin": "^1.0.0"
+  },
+  "dependencies": {}
+}
