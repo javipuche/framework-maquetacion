@@ -10,20 +10,23 @@ MAIN
 // TOOLS
 @import "bower_components/mediaqueries-sass-mixin/mediaqueries-sass-mixin";
 @import "bower_components/framework-scss/tools/tools.css-triangle";
+@import "bower_components/framework-scss/tools/tools.aspect-ratio";
+@import "bower_components/framework-scss/tools/tools.buttons";
 
 // GENERIC
 @import "bower_components/framework-scss/generic/generic.box-sizing";
 @import "bower_components/normalize-css/normalize";
 @import "bower_components/framework-scss/generic/generic.reset";
+@import "bower_components/framework-scss/generic/generic.shared";
 
 // ELEMENTS
-//@import "bower_components/framework-scss/elements/elements.";
+@import "elements/elements.body";
 
 // OBJECTS
 //@import "bower_components/framework-scss/objects/objects.scss";
 
 // COMPONENTS
-//@import "bower_components/framework-scss/components/components.";
+@import "components/components.buttons";
 
 // UTILITIES
 //@import "bower_components/framework-scss/utilities/utilities.";
