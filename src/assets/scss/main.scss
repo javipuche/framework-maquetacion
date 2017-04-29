@@ -4,29 +4,26 @@ MAIN
 
 // SETTINGS
 @import "settings/settings.config";
-@import "settings/settings.core";
+@import "bower_components/framework-scss/settings/settings.core";
 @import "settings/settings.global";
 
 // TOOLS
 @import "bower_components/mediaqueries-sass-mixin/mediaqueries-sass-mixin";
-@import "tools/tools.css-triangle";
+@import "bower_components/framework-scss/tools/tools.css-triangle";
 
 // GENERIC
-@import "bower_components/normalize-scss/normalize.scss";
-@import "generic/generic.box-sizing";
-@import "generic/generic.reset";
+@import "bower_components/framework-scss/generic/generic.box-sizing";
+@import "bower_components/normalize-css/normalize";
+@import "bower_components/framework-scss/generic/generic.reset";
 
 // ELEMENTS
-//@import "elements/elements.";
+//@import "bower_components/framework-scss/elements/elements.";
 
 // OBJECTS
-//@import "objects/objects.";
+//@import "bower_components/framework-scss/objects/objects.scss";
 
 // COMPONENTS
-//@import "components/components.";
+//@import "bower_components/framework-scss/components/components.";
 
 // UTILITIES
-//@import "utilities/utilities.";
-
-// SHAME FILE
-@import "shame";
+//@import "bower_components/framework-scss/utilities/utilities.";

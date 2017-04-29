@@ -1,12 +1,23 @@
 {
-  "name": "maquetacion-base",
+  "name": "framework-maquetacion",
   "version": "1.0.0",
-  "author": "Fco. Javier Puche Victoria",
-  "devDependencies": {
-    "jquery": "^3.1.1",
-    "normalize-scss": "^3.0.3",
-    "flexbox-grid-mixins": "^0.1.3",
-    "mediaqueries-sass-mixin": "^1.0.0"
-  },
-  "dependencies": {}
+  "homepage": "https://github.com/javipuche/framework-maquetacion",
+  "authors": [
+    "Javier Puche <javierpuchevictoria@gmail.com>"
+  ],
+  "description": "Framework de maquetación escalable y sostenible para empezar un nuevo proyecto.",
+  "main": "src/",
+  "keywords": [
+    "framework",
+    "maquetacion",
+    "html",
+    "css",
+    "base"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "mediaqueries-sass-mixin": "^1.2.1",
+    "normalize-css": "normalize.css#^6.0.0",
+    "jquery": "^3.1.1"
+  }
 }

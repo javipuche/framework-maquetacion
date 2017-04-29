@@ -105,7 +105,3 @@ gulp build
 ```bash
 gulp build --production
 ```
-
-## Documentación
-
-Una vez esté el servidor en marcha puedes encontrar toda la documentación en [localhost:3000/documentation](localhost:3000/documentation/index.html).

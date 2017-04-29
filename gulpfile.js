@@ -8,31 +8,32 @@ PLUGINS
 ============================================================================= */
 
 const gulp = require('gulp'); // Gulp
-const sassToCSS = require('gulp-sass'); // Compilador de SASS
-const cssnano = require('gulp-cssnano'); // Minifica el CSS
-const combinemq = require('gulp-combine-mq'); // Combina las Mediaqueries repetidas en una
-const autoprefixer = require('gulp-autoprefixer'); // Autoprefixer para SASS
 const del = require('del'); // Borra archivos
-const critical = require('critical').stream; // Separa el CSS critico de la web y lo incrusta inline;
 const imagemin = require('gulp-imagemin'); // Optimizar imágenes
 const uglify = require('gulp-uglify'); // Minificar JS
 const concat = require('gulp-concat'); // Concatena ficheros
 const plumber = require('gulp-plumber'); // Evita que gulp para de ejecutarse cuando tiene un error
-const browser = require('browser-sync').create(); // Servidor local, refresco automatico del navegador
+const browser = require('browser-sync').create(); // Servidor local, refresco automático del navegador
 const panini = require('panini'); // Simple html template engine generator
-const sourcemaps = require('gulp-sourcemaps'); // Sourcemaps de Sass
 const prettify = require('gulp-jsbeautifier'); // Ordena el HTML final
-const markdownToHTML = require('gulp-markdown'); // Convierte Markdown en HTML
-const replace = require('gulp-replace'); // Reemplaza strings, etc.
 const gulpif = require('gulp-if'); // Condicional if en pipes
 const argv = require('yargs').argv; // Pasar variables por consola
+
+// CSS
+const sassToCSS = require('gulp-sass'); // Compilador de SASS
+const sourcemaps = require('gulp-sourcemaps'); // Sourcemaps de SASS
+const cssunit = require('gulp-css-unit'); // Convierte unidades
+const postcss = require('gulp-postcss'); // Libreria necesaria para otros plugins
+const autoprefixer = require('autoprefixer'); // Añade los prefijos necesarios a las propiedades CSS
+const cssmqpacker = require('css-mqpacker'); // Junta las Mediaqueries y las mueve al final
+const cssnano = require('cssnano'); // Minifica el CSS
 
 /* =============================================================================
 TASKS
 ============================================================================= */
 
 gulp.task('build',
-    gulp.series(clean, markdown, gulp.parallel(pages, images, copy, scripts, documentationScripts), sass)
+    gulp.series(clean, gulp.parallel(pages, scripts, images, copy, sass))
 );
 
 gulp.task('default',
@@ -47,15 +48,13 @@ FUNCTIONS
 
 // Refresca el navegador
 function reloadBrowser(done) {
-  browser.reload();
-  done();
+    browser.reload();
+    done();
 }
 
 // Elimina todo el contenido de dist y la documentacion de src
-function clean(done) {
-    del('dist/**/*');
-    del('src/html/pages/documentation/**/*');
-    done();
+function clean() {
+    return del('dist/**/*');
 }
 
 // Compila el HTML
@@ -64,9 +63,6 @@ function pages() {
     .pipe(panini({
         root: 'src/html/pages/',
         layouts: 'src/html/layouts/',
-        pageLayouts: {
-            'documentation': 'documentation'  // Se puede especificar el layout por carpetas
-        },
         partials: 'src/html/partials/',
         helpers: 'src/html/helpers/',
         data: 'src/html/data/'
@@ -82,37 +78,37 @@ function resetPages(done) {
     done();
 }
 
-// Compila la documentación en Markdown a HTML
-function markdown() {
-    return gulp.src('docs/**/*.md')
-    .pipe(markdownToHTML())
-    .pipe(replace('&quot;', '"'))
-    .pipe(replace('&#39;', "'"))
-    .pipe(replace('<p>---', "---"))
-    .pipe(replace('---</p>', "---"))
-    .pipe(replace('<pre><code>', '<pre class="language-none"><code class="language-none">'))
-    .pipe(replace(/<code class="(.*?)">/, function(match) {
-            return match + '\n';
-     }))
-    .pipe(gulp.dest('src/html/pages/documentation/'));
-}
-
 // Compila el Sass a CSS
 function sass() {
+
+    let pluginsPostcss = [
+        autoprefixer({
+            browsers: ['last 20 versions']
+        }),
+        cssmqpacker({
+            sort: true
+        })
+    ];
+
+    if (argv.production) {
+        let pluginsPostcssProduction = [
+            cssnano({
+                discardUnused: {
+                    fontFace: false
+                }
+            })
+        ];
+
+        pluginsPostcss = pluginsPostcss.concat(pluginsPostcssProduction);
+    }
+
     return gulp.src([
-        'src/assets/scss/main.scss',
-        'src/assets/documentation/scss/documentation.scss'
+        'src/assets/scss/main.scss'
     ])
     .pipe(gulpif(!argv.production, sourcemaps.init()))
     .pipe(sassToCSS()
     .on('error', sassToCSS.logError))
-    .pipe(autoprefixer({
-        browsers: ['last 10 versions']
-    }))
-    .pipe(gulpif(argv.production, combinemq({
-        beautify: false
-    })))
-    .pipe(gulpif(argv.production, cssnano()))
+    .pipe(postcss(pluginsPostcss))
     .pipe(gulpif(!argv.production, sourcemaps.write('.', { sourceRoot: '/' })))
     .pipe(plumber())
     .pipe(gulp.dest('dist/assets/css/'))
@@ -122,29 +118,11 @@ function sass() {
 // Concatena y minifica los Scripts
 function scripts() {
     return gulp.src([
-        'bower_components/jquery/dist/jquery.min.js',
+        'node_modules/jquery/dist/jquery.min.js',
         'src/assets/js/vendor/**/*.js',
         'src/assets/js/custom.js'
     ])
-	.pipe(concat('main.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/assets/js/'));
-}
-
-// Concatena y minifica los Scripts de documentation
-function documentationScripts() {
-    return gulp.src([
-        'bower_components/prism/prism.js',
-        'bower_components/prism/plugins/toolbar/prism-toolbar.min.js',
-        'bower_components/prism/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js',
-        'bower_components/prism/plugins/normalize-whitespace/prism-normalize-whitespace.min.js',
-        'bower_components/prism/components/prism-bash.min.js',
-        'bower_components/prism/components/prism-scss.min.js',
-        'bower_components/prism/components/prism-handlebars.min.js',
-        'bower_components/prism/components/prism-markdown.min.js',
-        'src/assets/documentation/js/documentation.js'
-    ])
-	.pipe(concat('documentation.min.js'))
+    .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('dist/assets/js/'));
 }
@@ -161,8 +139,8 @@ function images() {
 // Copia todos los assets a dist, menos los que empiezan por !
 function copy() {
     return gulp.src([
-        'src/assets/**/*',
-        '!src/assets/{img,scss,js,documentation}{,/**}'
+        'src/assets/**/*.*',
+        '!src/assets/{img,scss,js}{,/**}'
     ])
     .pipe(gulp.dest('dist/assets/'));
 }
@@ -179,22 +157,14 @@ function server(done) {
 
 // Detecta los cambios en vivo y llama a las funciones
 function watch(done) {
-    gulp.watch([
-        'src/html/pages/**/*.{html,hbs,handlebars}',
-        '!src/html/pages/documentation/**/*'
-    ]).on('all', gulp.series(pages, reloadBrowser));
+    gulp.watch('src/html/pages/**/*.{html,hbs,handlebars}').on('all', gulp.series(pages, reloadBrowser));
     gulp.watch('src/html/{layouts,partials}/**/*.{html,hbs,handlebars}').on('all', gulp.series(resetPages, pages, reloadBrowser));
-    gulp.watch('docs/**/*.md').on('all', gulp.series(markdown, pages, reloadBrowser));
-    gulp.watch([
-        'src/assets/scss/**/*.scss',
-        'src/assets/documentation/scss/**/*.scss',
-    ]).on('all', gulp.series(sass));
+    gulp.watch(['src/assets/scss/**/*.scss']).on('all', gulp.series(sass));
     gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, reloadBrowser));
     gulp.watch([
         'src/assets/**/*',
-        '!src/assets/{img,scss,js,documentation}{,/**}'
+        '!src/assets/{img,scss,js}{,/**}'
     ]).on('all', gulp.series(copy, reloadBrowser));
     gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(scripts, reloadBrowser));
-    gulp.watch('src/assets/documentation/js/**/*.js').on('all', gulp.series(documentationScripts, reloadBrowser));
     done();
 }
