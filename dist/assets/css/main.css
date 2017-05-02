@@ -496,7 +496,8 @@ fieldset {
   margin-bottom: 20px; }
 
 dd, ol, ul {
-  margin-left: 20px; }
+  margin-left: 20px;
+  padding-left: 20px; }
 
 /* =============================================================================
 BODY
@@ -505,6 +506,16 @@ body {
   font-size: 16px;
   line-height: 1.625;
   font-family: sans-serif; }
+
+/* =============================================================================
+WRAPPER
+============================================================================= */
+.o-wrapper {
+  max-width: 20px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 20px;
+  padding-right: 20px; }
 
 /* =============================================================================
 BUTTONS
