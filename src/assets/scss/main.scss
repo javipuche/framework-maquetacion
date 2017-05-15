@@ -1,6 +1,6 @@
-/* =============================================================================
-MAIN
-============================================================================= */
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
 
 // SETTINGS
 @import "settings/settings.config";
@@ -13,6 +13,7 @@ MAIN
 @import "bower_components/framework-scss/tools/tools.css-triangle";
 @import "bower_components/framework-scss/tools/tools.aspect-ratio";
 @import "bower_components/framework-scss/tools/tools.buttons";
+@import "bower_components/framework-scss/tools/tools.grid";
 
 // GENERIC
 @import "bower_components/framework-scss/generic/generic.box-sizing";
@@ -25,9 +26,12 @@ MAIN
 
 // OBJECTS
 @import "bower_components/framework-scss/objects/objects.wrapper.scss";
+@import "bower_components/framework-scss/objects/objects.wrapper-responsive.scss";
+@import "bower_components/framework-scss/objects/objects.grid";
 
 // COMPONENTS
 @import "components/components.buttons";
 
 // UTILITIES
-//@import "bower_components/framework-scss/utilities/utilities.";
+@import "bower_components/framework-scss/utilities/utilities.spacings.scss";
+@import "bower_components/framework-scss/utilities/utilities.spacings-responsive.scss";
