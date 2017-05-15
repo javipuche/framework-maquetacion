@@ -26,6 +26,7 @@
     "autoprefixer": "^6.7.7",
     "browser-sync": "^2.18.8",
     "caniuse-db": "^1.0.30000635",
+    "compression": "^1.6.2",
     "css-mqpacker": "^5.0.1",
     "cssnano": "^3.10.0",
     "del": "^2.2.2",

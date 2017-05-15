@@ -10,7 +10,7 @@ trim_trailing_whitespace = true
 charset = utf-8
 indent_size = 2
 
-[*.{html,hbs,handlebars,php}]
+[*.{html,hbs,handlebars,php,js}]
 charset = utf-8
 indent_size = 4
 

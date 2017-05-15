@@ -18,6 +18,7 @@ const panini = require('panini'); // Simple html template engine generator
 const prettify = require('gulp-jsbeautifier'); // Ordena el HTML final
 const gulpif = require('gulp-if'); // Condicional if en pipes
 const argv = require('yargs').argv; // Pasar variables por consola
+const compression = require('compression'); // Gzip
 
 // CSS
 const sassToCSS = require('gulp-sass'); // Compilador de SASS
@@ -149,7 +150,15 @@ function copy() {
 function server(done) {
     browser.init({
         server: {
-            baseDir: 'dist/'
+            baseDir: 'dist/',
+            middleware: function(req, res, next) {
+                if (argv.production) {
+                    let gzip = compression();
+                    gzip(req, res, next);
+                } else {
+                    next();
+                }
+            }
         }
     });
     done();
