@@ -60,7 +60,7 @@ function clean() {
 
 // Compila el HTML
 function pages() {
-    return gulp.src('src/html/pages/**/*.{html,hbs,handlebars}')
+    return gulp.src('src/html/pages/**/*.{html,hbs,handlebars,php}')
     .pipe(panini({
         root: 'src/html/pages/',
         layouts: 'src/html/layouts/',
@@ -166,7 +166,7 @@ function server(done) {
 
 // Detecta los cambios en vivo y llama a las funciones
 function watch(done) {
-    gulp.watch('src/html/pages/**/*.{html,hbs,handlebars}').on('all', gulp.series(pages, reloadBrowser));
+    gulp.watch('src/html/pages/**/*.{html,hbs,handlebars,php}').on('all', gulp.series(pages, reloadBrowser));
     gulp.watch('src/html/{layouts,partials}/**/*.{html,hbs,handlebars}').on('all', gulp.series(resetPages, pages, reloadBrowser));
     gulp.watch(['src/assets/scss/**/*.scss']).on('all', gulp.series(sass));
     gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, reloadBrowser));
