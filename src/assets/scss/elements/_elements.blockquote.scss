@@ -1,0 +1,14 @@
+/* -----------------------------------------------------------------------------
+ * BLOCKQUOTE
+ */
+
+
+// Blockquote varaibles
+
+$e-blockquote-margin-bottom: $f-space-medium !default;
+
+// Blockquote output
+
+blockquote {
+  margin-bottom: $e-blockquote-margin-bottom;
+}

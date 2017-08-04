@@ -1,0 +1,19 @@
+/* -----------------------------------------------------------------------------
+ * LISTS
+ */
+
+
+// Lists variables
+
+$e-lists-margin-bottom: $f-space-medium !default;
+$e-lists-margin-left: $f-space-medium !default;
+
+$e-lists-padding-left: $f-space-medium !default;
+
+// Lists output
+
+dd, ol, ul {
+  margin-bottom: $e-lists-margin-bottom;
+  margin-left: $e-lists-margin-left;
+  padding-left: $e-lists-padding-left;
+}

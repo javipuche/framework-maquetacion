@@ -1,0 +1,16 @@
+/* -----------------------------------------------------------------------------
+ * PX TO EM
+ */
+
+
+@function px-to-em($value, $baseline: $s-core-font-size) {
+  @if unit($value) == 'em' {
+    @return $value;
+  }
+  @else {
+     @if unitless($value){
+      $value: $value + 0;
+    }
+    @return $value / $baseline * 1em;
+  }
+}

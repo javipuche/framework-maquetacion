@@ -1,0 +1,51 @@
+/* -----------------------------------------------------------------------------
+ * HEADINGS
+ */
+
+
+// Headigns variables
+
+$e-headings-font-weight: 700 !default;
+
+$e-headings-font-size-h1: $f-font-size-xxxl !default;
+$e-headings-font-size-h2: $f-font-size-xxl !default;
+$e-headings-font-size-h3: $f-font-size-xl !default;
+$e-headings-font-size-h4: $f-font-size-l !default;
+$e-headings-font-size-h5: $f-font-size-m !default;
+$e-headings-font-size-h6: $f-font-size-s !default;
+
+$e-headings-line-height: $f-line-height-medium !default;
+
+$e-headings-margin-bottom: $f-space-medium !default;
+
+// Headigns ouput
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: $e-headings-margin-bottom;
+  font-weight: $e-headings-font-weight;
+  line-height: $e-headings-line-height;
+}
+
+h1 {
+  font-size: $e-headings-font-size-h1;
+}
+
+h2 {
+  font-size: $e-headings-font-size-h2;
+}
+
+h3 {
+  font-size: $e-headings-font-size-h3;
+}
+
+h4 {
+  font-size: $e-headings-font-size-h4;
+}
+
+h5 {
+  font-size: $e-headings-font-size-h5;
+}
+
+h6 {
+  font-size: $e-headings-font-size-h6;
+}

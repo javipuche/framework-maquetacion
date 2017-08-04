@@ -1,0 +1,21 @@
+/* -----------------------------------------------------------------------------
+ * LINE HEIGHTS
+ */
+
+
+// Main line heights
+
+$f-line-height-medium: 1 !default;
+$f-line-height-large: 1.25 !default;
+$f-line-height-xlarge: 1.618 !default;
+$f-line-height-xxlarge: 2 !default;
+
+
+// Line heights map
+
+$f-line-heights: (
+  "medium": $f-line-height-medium,
+  "large": $f-line-height-large,
+  "xlarge": $f-line-height-xlarge,
+  "xxlarge": $f-line-height-xxlarge,
+) !default;

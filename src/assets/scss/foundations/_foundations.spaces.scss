@@ -1,0 +1,34 @@
+/* -----------------------------------------------------------------------------
+ * SPACES
+ */
+
+
+// Main space
+
+$f-space: 8px !default;
+
+// Space variants
+
+$f-space-none: 0 !default;
+$f-space-tiny: $f-space !default;
+$f-space-small: round($f-space * 2) !default;
+$f-space-medium: round($f-space * 3) !default;
+$f-space-large: round($f-space * 4) !default;
+$f-space-xlarge: round($f-space * 6) !default;
+$f-space-xxlarge: round($f-space * 8) !default;
+$f-space-xxxlarge: round($f-space * 10) !default;
+$f-space-huge: round($f-space * 12) !default;
+
+// Spaces map
+
+$f-spaces: (
+  "none": $f-space-none,
+  "tiny": $f-space-tiny,
+  "small": $f-space-small,
+  "medium": $f-space-medium,
+  "large": $f-space-large,
+  "xlarge": $f-space-xlarge,
+  "xxlarge": $f-space-xxlarge,
+  "xxxlarge": $f-space-xxxlarge,
+  "huge": $f-space-huge,
+) !default;

@@ -1,6 +1,12 @@
 /* -----------------------------------------------------------------------------
- * CONFIG
+ * BOX SIZING
  */
 
 
-$s-config-breakpoint-separator: \@ !default;
+* {
+  &,
+  &::after,
+  &::before {
+    box-sizing: inherit;
+  }
+}

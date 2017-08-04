@@ -1,0 +1,46 @@
+/* -----------------------------------------------------------------------------
+ * VISIBLE
+ */
+
+
+// Variables
+// -----------------------------------------------------------------------------
+
+// Toggling
+
+$u-visible-enabled: true !default;
+
+// Breakpoints
+
+$u-visible-breakpoints-enabled: true !default;
+$u-visible-breakpoints: $f-mq-breakpoints !default;
+
+
+// Output
+// -----------------------------------------------------------------------------
+
+@if $u-visible-enabled {
+  .u-visible {
+    display: block !important;
+    &-inline {
+      display: inline-block !important;
+    }
+  }
+}
+
+
+// Breakpoints output
+// -----------------------------------------------------------------------------
+
+@if $u-visible-enabled and $u-visible-breakpoints-enabled {
+  @each $_bp-name, $_bp-value in $u-visible-breakpoints {
+    @include breakpoint($_bp-value) {
+      .u-visible#{$s-config-breakpoint-separator}#{$_bp-name} {
+        display: block !important;
+      }
+      .u-visible-inline#{$s-config-breakpoint-separator}#{$_bp-name} {
+        display: inline-block !important;
+      }
+    }
+  }
+}

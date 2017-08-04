@@ -1,0 +1,104 @@
+/* -----------------------------------------------------------------------------
+ * WRAPPERS
+ */
+
+
+// Variables
+// -----------------------------------------------------------------------------
+
+// Toggling
+
+$u-widths-enabled: true !default;
+
+// Variables
+
+$u-width-none: 0 !default;
+$u-width-tiny: 300px !default;
+$u-width-small: 600px !default;
+$u-width-medium: 800px !default;
+$u-width-large: 1200px !default;
+$u-width-xlarge: 1400px !default;
+$u-width-xxlarge: 1600px !default;
+
+// Variables map
+
+$u-widths: (
+  "none": $u-width-none,
+  "tiny": $u-width-tiny,
+  "small": $u-width-small,
+  "medium": $u-width-medium,
+  "large": $u-width-large,
+  "xlarge": $u-width-xlarge,
+  "xxlarge": $u-width-xxlarge
+) !default;
+
+// Modifiers
+
+$u-widths-modifiers-enabled: true !default;
+
+// Breakpoints
+
+$u-widths-breakpoints-enabled: true !default;
+$u-widths-modifiers-breakpoints-enabled: true !default;
+$u-widths-breakpoints: $f-mq-breakpoints !default;
+
+
+// Mixin
+// -----------------------------------------------------------------------------
+
+@mixin u-wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+
+
+// Output
+// -----------------------------------------------------------------------------
+
+@if $u-widths-enabled {
+  .o-wrapper {
+    @include u-wrapper;
+
+    @if $u-widths-modifiers-enabled {
+      @each $_class-name, $_max-width in $u-widths {
+        &--#{$_class-name} {
+          max-width: $_max-width;
+        }
+      }
+    }
+  }
+}
+
+
+// Breakpoints output
+// -----------------------------------------------------------------------------
+
+@if $u-widths-enabled and $u-widths-breakpoints-enabled {
+
+  // Object
+
+  @if $u-widths-modifiers-enabled {
+    @each $_bp-name, $_bp-value in $u-widths-breakpoints {
+      .o-wrapper#{$s-config-breakpoint-separator}#{$_bp-name} {
+        @include breakpoint($_bp-value) {
+          @include u-wrapper;
+        }
+      }
+    }
+  }
+
+  // Sizes
+
+  @if $u-widths-modifiers-breakpoints-enabled {
+    @each $_class-name, $_max-width in $u-widths {
+      @each $_bp-name, $_bp-value in $u-widths-breakpoints {
+        .o-wrapper--#{$_class-name}#{$s-config-breakpoint-separator}#{$_bp-name} {
+          @include breakpoint($_bp-value) {
+            max-width: $_max-width;
+          }
+        }
+      }
+    }
+  }
+}

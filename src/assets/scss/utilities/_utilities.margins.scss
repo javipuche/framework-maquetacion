@@ -1,0 +1,83 @@
+/* -----------------------------------------------------------------------------
+ * MARGINS
+ */
+
+
+// Variables
+// -----------------------------------------------------------------------------
+
+// Toggling
+
+$u-margin-enabled: true !default;
+
+// Spaces
+
+$u-margin-spaces: $f-spaces !default;
+$u-margin-classes: (
+  "margin-top": (
+    "margin-top"
+  ),
+  "margin-right": (
+    "margin-right"
+  ),
+  "margin-bottom": (
+    "margin-bottom"
+  ),
+  "margin-left": (
+    "margin-left"
+  ),
+  "margin-vertical": (
+    "margin-top",
+    "margin-bottom"
+  ),
+  "margin-horizontal": (
+    "margin-left",
+    "margin-right"
+  ),
+  "margin" : (
+    "margin-top",
+    "margin-right",
+    "margin-bottom",
+    "margin-left"
+  )
+) !default;
+
+// Breakpoints
+
+$u-margin-breakpoints-enabled: true !default;
+$u-margin-breakpoints: $f-mq-breakpoints !default;
+
+// Ouput
+// -----------------------------------------------------------------------------
+
+@if $u-margin-enabled {
+  @each $_space-name, $_space-value in $u-margin-spaces {
+    @each $_class-name, $_class-properties in $u-margin-classes {
+      .u-#{$_class-name}-#{$_space-name} {
+        @each $_property-name in $_class-properties {
+          #{$_property-name}: $_space-value !important;
+        }
+      }
+    }
+  }
+}
+
+
+// Breakpoints ouput
+// -----------------------------------------------------------------------------
+
+@if $u-margin-enabled and $u-margin-breakpoints-enabled {
+  @each $_space-name, $_space-value in $u-margin-spaces {
+    @each $_bp-name, $_bp-value in $u-margin-breakpoints {
+      @each $_class-name, $_class-properties in $u-margin-classes {
+        .u-#{$_class-name}-#{$_space-name}#{$s-config-breakpoint-separator}#{$_bp-name} {
+          @include breakpoint($_bp-value) {
+            @each $_property-name in $_class-properties {
+              #{$_property-name}: $_space-value !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

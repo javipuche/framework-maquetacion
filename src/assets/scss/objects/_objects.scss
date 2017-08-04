@@ -1,6 +1,7 @@
 /* -----------------------------------------------------------------------------
- * CONFIG
+ * OBJECTS
  */
 
 
-$s-config-breakpoint-separator: \@ !default;
+@import "objects.wrapper";
+@import "objects.layout";

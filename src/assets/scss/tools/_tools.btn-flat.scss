@@ -1,0 +1,27 @@
+/* ==========================================================================
+   #BTN FLAT
+   ========================================================================== */
+
+@mixin btn-flat( $color: #fff, $background: #000, $color-hover: null, $background-hover: null ) {
+  background-color: $background;
+  color: $color;
+  text-decoration: none;
+  transition: all 0.3s;
+  @if $color-hover or $background-hover {
+    &.is-active,
+    &:active,
+    &:focus,
+    &:hover {
+      transition: all 0.3s;
+      @if $color-hover {
+        color: $color-hover;
+      }
+      @if $background-hover {
+        background-color: $background-hover;
+      }
+
+    }
+
+  }
+
+}

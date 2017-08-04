@@ -1,0 +1,137 @@
+/* -----------------------------------------------------------------------------
+ * FLEX
+ */
+
+
+// Variables
+// -----------------------------------------------------------------------------
+
+// Toggling
+
+$u-flex-enabled: true !default;
+
+// Breakpoints
+
+$u-flex-breakpoints-enabled: true !default;
+$u-flex-breakpoints: $f-mq-breakpoints !default;
+
+
+// Mixin
+// -----------------------------------------------------------------------------
+
+@mixin u-flex($_bp-separator: null, $_bp-name: null) {
+  .u-flex#{$_bp-separator}#{$_bp-name} {
+    display: flex !important;
+
+    &-inline#{$_bp-separator}#{$_bp-name} {
+      display: inline-flex !important;
+    }
+
+    &-wrap#{$_bp-separator}#{$_bp-name} {
+      flex-wrap: wrap;
+    }
+
+    &-wrap-reverse#{$_bp-separator}#{$_bp-name} {
+      flex-wrap: wrap-reverse;
+    }
+
+    &-nowrap#{$_bp-separator}#{$_bp-name} {
+      flex-wrap: nowrap;
+    }
+
+    &-column#{$_bp-separator}#{$_bp-name} {
+      flex-direction: column;
+    }
+
+    &-column-reverse#{$_bp-separator}#{$_bp-name} {
+      flex-direction: column-reverse;
+    }
+
+    &-row#{$_bp-separator}#{$_bp-name} {
+      flex-direction: row;
+    }
+
+    &-row-reverse#{$_bp-separator}#{$_bp-name} {
+      flex-direction: row-reverse;
+    }
+
+    &-left#{$_bp-separator}#{$_bp-name} {
+      justify-content: flex-start;
+    }
+
+    &-center#{$_bp-separator}#{$_bp-name} {
+      justify-content: center;
+    }
+
+    &-right#{$_bp-separator}#{$_bp-name} {
+      justify-content: flex-end;
+    }
+
+    &-between#{$_bp-separator}#{$_bp-name} {
+      justify-content: space-between;
+    }
+
+    &-around#{$_bp-separator}#{$_bp-name} {
+      justify-content: space-around;
+    }
+
+    &-top#{$_bp-separator}#{$_bp-name} {
+      align-items: flex-start;
+    }
+
+    &-middle#{$_bp-separator}#{$_bp-name} {
+      align-items: center;
+    }
+
+    &-bottom#{$_bp-separator}#{$_bp-name} {
+      align-items: flex-end;
+    }
+
+    &-baseline#{$_bp-separator}#{$_bp-name} {
+      align-items: baseline;
+    }
+
+    &-self-start#{$_bp-separator}#{$_bp-name} {
+      align-self: flex-start;
+    }
+
+    &-self-end#{$_bp-separator}#{$_bp-name} {
+      align-self: flex-end;
+    }
+
+    &-self-stretch#{$_bp-separator}#{$_bp-name} {
+      align-self: stretch;
+    }
+
+    &-self-baseline#{$_bp-separator}#{$_bp-name} {
+      align-self: baseline;
+    }
+
+    &-self-center#{$_bp-separator}#{$_bp-name} {
+      align-self: center;
+    }
+
+    &-grow#{$_bp-separator}#{$_bp-name} {
+      flex-grow: 1;
+    }
+  }
+}
+
+
+// Output
+// -----------------------------------------------------------------------------
+
+@if $u-flex-enabled {
+  @include u-flex;
+}
+
+
+// Breakpoints output
+// -----------------------------------------------------------------------------
+@if $u-flex-enabled and $u-flex-breakpoints-enabled {
+  @each $_bp-name, $_bp-value in $u-flex-breakpoints {
+    @include breakpoint($_bp-value) {
+      @include u-flex($s-config-breakpoint-separator, $_bp-name);
+    }
+  }
+}

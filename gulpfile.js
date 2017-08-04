@@ -19,6 +19,10 @@ const prettify = require('gulp-jsbeautifier'); // Ordena el HTML final
 const gulpif = require('gulp-if'); // Condicional if en pipes
 const argv = require('yargs').argv; // Pasar variables por consola
 const compression = require('compression'); // Gzip
+const babelify = require('babelify'); // Nueva sintaxis js
+const browserify = require('browserify'); // Para crear modulos
+const buffer = require('vinyl-buffer');
+const source = require('vinyl-source-stream');
 
 // CSS
 const sassToCSS = require('gulp-sass'); // Compilador de SASS
@@ -118,13 +122,13 @@ function sass() {
 
 // Concatena y minifica los Scripts
 function scripts() {
-    return gulp.src([
-        'node_modules/jquery/dist/jquery.min.js',
-        'src/assets/js/vendor/**/*.js',
-        'src/assets/js/custom.js'
-    ])
-    .pipe(concat('main.min.js'))
-    .pipe(uglify())
+    return browserify({
+        entries: ['src/assets/js/main.js'],
+    }).transform(babelify, {presets: ["es2015", "es2016"]})
+    .bundle()
+    .pipe(source('main.min.js'))
+    .pipe(buffer())
+    .pipe(gulpif(argv.production, uglify()))
     .pipe(gulp.dest('dist/assets/js/'));
 }
 
@@ -167,9 +171,12 @@ function server(done) {
 // Detecta los cambios en vivo y llama a las funciones
 function watch(done) {
     gulp.watch('src/html/pages/**/*.{html,hbs,handlebars,php}').on('all', gulp.series(pages, reloadBrowser));
-    gulp.watch('src/html/{layouts,partials}/**/*.{html,hbs,handlebars}').on('all', gulp.series(resetPages, pages, reloadBrowser));
+    gulp.watch([
+        'src/html/{layouts,partials}/**/*.{html,hbs,handlebars}',
+        'src/html/data/**/*.{json,yml}'
+    ]).on('all', gulp.series(resetPages, pages, reloadBrowser));
     gulp.watch(['src/assets/scss/**/*.scss']).on('all', gulp.series(sass));
-    gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, reloadBrowser));
+    gulp.watch('src/assets/img/**/*.{jpg,jpeg,png,gif,svg}').on('all', gulp.series(images, reloadBrowser));
     gulp.watch([
         'src/assets/**/*',
         '!src/assets/{img,scss,js}{,/**}'

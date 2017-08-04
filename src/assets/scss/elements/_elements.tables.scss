@@ -1,0 +1,15 @@
+/* -----------------------------------------------------------------------------
+ * TABLES
+ */
+
+
+// Tables variables
+
+$e-tables-margin-bottom: $f-space-medium !default;
+
+// Tables output
+
+table {
+  margin-bottom: $e-tables-margin-bottom;
+  width: 100%;
+}

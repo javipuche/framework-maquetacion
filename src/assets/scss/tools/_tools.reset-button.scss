@@ -1,0 +1,12 @@
+/* ==========================================================================
+   #RESET BUTTON
+   ========================================================================== */
+
+@mixin reset-button {
+  appearance: none !important;
+  border: 0;
+  background: none;
+  color: inherit;
+  padding: 0;
+  outline: none;
+}
