@@ -22,98 +22,102 @@ $u-flex-breakpoints: $f-mq-breakpoints !default;
 @mixin u-flex($_bp-separator: null, $_bp-name: null) {
   .u-flex#{$_bp-separator}#{$_bp-name} {
     display: flex !important;
+  }
 
-    &-inline#{$_bp-separator}#{$_bp-name} {
-      display: inline-flex !important;
-    }
+  .u-flex-inline#{$_bp-separator}#{$_bp-name} {
+    display: inline-flex !important;
+  }
 
-    &-wrap#{$_bp-separator}#{$_bp-name} {
-      flex-wrap: wrap;
-    }
+  .u-flex-wrap#{$_bp-separator}#{$_bp-name} {
+    flex-wrap: wrap !important;
+  }
 
-    &-wrap-reverse#{$_bp-separator}#{$_bp-name} {
-      flex-wrap: wrap-reverse;
-    }
+  .u-flex-wrap-reverse#{$_bp-separator}#{$_bp-name} {
+    flex-wrap: wrap-reverse !important;
+  }
 
-    &-nowrap#{$_bp-separator}#{$_bp-name} {
-      flex-wrap: nowrap;
-    }
+  .u-flex-nowrap#{$_bp-separator}#{$_bp-name} {
+    flex-wrap: nowrap !important;
+  }
 
-    &-column#{$_bp-separator}#{$_bp-name} {
-      flex-direction: column;
-    }
+  .u-flex-column#{$_bp-separator}#{$_bp-name} {
+    flex-direction: column !important;
+  }
 
-    &-column-reverse#{$_bp-separator}#{$_bp-name} {
-      flex-direction: column-reverse;
-    }
+  .u-flex-column-reverse#{$_bp-separator}#{$_bp-name} {
+    flex-direction: column-reverse !important;
+  }
 
-    &-row#{$_bp-separator}#{$_bp-name} {
-      flex-direction: row;
-    }
+  .u-flex-row#{$_bp-separator}#{$_bp-name} {
+    flex-direction: row !important;
+  }
 
-    &-row-reverse#{$_bp-separator}#{$_bp-name} {
-      flex-direction: row-reverse;
-    }
+  .u-flex-row-reverse#{$_bp-separator}#{$_bp-name} {
+    flex-direction: row-reverse !important;
+  }
 
-    &-left#{$_bp-separator}#{$_bp-name} {
-      justify-content: flex-start;
-    }
+  .u-flex-left#{$_bp-separator}#{$_bp-name} {
+    justify-content: flex-start;
+  }
 
-    &-center#{$_bp-separator}#{$_bp-name} {
-      justify-content: center;
-    }
+  .u-flex-center#{$_bp-separator}#{$_bp-name} {
+    justify-content: center !important;
+  }
 
-    &-right#{$_bp-separator}#{$_bp-name} {
-      justify-content: flex-end;
-    }
+  .u-flex-right#{$_bp-separator}#{$_bp-name} {
+    justify-content: flex-end !important;
+  }
 
-    &-between#{$_bp-separator}#{$_bp-name} {
-      justify-content: space-between;
-    }
+  .u-flex-between#{$_bp-separator}#{$_bp-name} {
+    justify-content: space-between !important;
+  }
 
-    &-around#{$_bp-separator}#{$_bp-name} {
-      justify-content: space-around;
-    }
+  .u-flex-around#{$_bp-separator}#{$_bp-name} {
+    justify-content: space-around !important;
+  }
 
-    &-top#{$_bp-separator}#{$_bp-name} {
-      align-items: flex-start;
-    }
+  .u-flex-top#{$_bp-separator}#{$_bp-name} {
+    align-items: flex-start !important;
+  }
 
-    &-middle#{$_bp-separator}#{$_bp-name} {
-      align-items: center;
-    }
+  .u-flex-middle#{$_bp-separator}#{$_bp-name} {
+    align-items: center !important;
+  }
 
-    &-bottom#{$_bp-separator}#{$_bp-name} {
-      align-items: flex-end;
-    }
+  .u-flex-bottom#{$_bp-separator}#{$_bp-name} {
+    align-items: flex-end !important;
+  }
 
-    &-baseline#{$_bp-separator}#{$_bp-name} {
-      align-items: baseline;
-    }
+  .u-flex-baseline#{$_bp-separator}#{$_bp-name} {
+    align-items: baseline !important;
+  }
 
-    &-self-start#{$_bp-separator}#{$_bp-name} {
-      align-self: flex-start;
-    }
+  .u-flex-self-start#{$_bp-separator}#{$_bp-name} {
+    align-self: flex-start !important;
+  }
 
-    &-self-end#{$_bp-separator}#{$_bp-name} {
-      align-self: flex-end;
-    }
+  .u-flex-self-end#{$_bp-separator}#{$_bp-name} {
+    align-self: flex-end !important;
+  }
 
-    &-self-stretch#{$_bp-separator}#{$_bp-name} {
-      align-self: stretch;
-    }
+  .u-flex-self-stretch#{$_bp-separator}#{$_bp-name} {
+    align-self: stretch !important;
+  }
 
-    &-self-baseline#{$_bp-separator}#{$_bp-name} {
-      align-self: baseline;
-    }
+  .u-flex-self-baseline#{$_bp-separator}#{$_bp-name} {
+    align-self: baseline !important;
+  }
 
-    &-self-center#{$_bp-separator}#{$_bp-name} {
-      align-self: center;
-    }
+  .u-flex-self-center#{$_bp-separator}#{$_bp-name} {
+    align-self: center !important;
+  }
 
-    &-grow#{$_bp-separator}#{$_bp-name} {
-      flex-grow: 1;
-    }
+  .u-flex-grow-1#{$_bp-separator}#{$_bp-name} {
+    flex-grow: 1 !important;
+  }
+
+  .u-flex-first#{$_bp-separator}#{$_bp-name} {
+    order: -1 !important;
   }
 }
 

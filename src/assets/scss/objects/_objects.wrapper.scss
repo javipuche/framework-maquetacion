@@ -10,31 +10,36 @@
 
 $u-widths-enabled: true !default;
 
-// Variables
+// Widths
 
 $u-width-none: 0 !default;
-$u-width-tiny: 300px !default;
-$u-width-small: 600px !default;
-$u-width-medium: 800px !default;
-$u-width-large: 1200px !default;
-$u-width-xlarge: 1400px !default;
-$u-width-xxlarge: 1600px !default;
+$u-width-t: 300px !default;
+$u-width-s: 600px !default;
+$u-width-m: 800px !default;
+$u-width-l: 1200px !default;
+$u-width-xl: 1400px !default;
+$u-width-xxl: 1600px !default;
 
-// Variables map
+// Paddings
+
+$u-width-paddings: $f-spaces !default;
+
+// Map
 
 $u-widths: (
   "none": $u-width-none,
-  "tiny": $u-width-tiny,
-  "small": $u-width-small,
-  "medium": $u-width-medium,
-  "large": $u-width-large,
-  "xlarge": $u-width-xlarge,
-  "xxlarge": $u-width-xxlarge
+  "t": $u-width-t,
+  "s": $u-width-s,
+  "m": $u-width-m,
+  "l": $u-width-l,
+  "xl": $u-width-xl,
+  "xxl": $u-width-xxl
 ) !default;
 
 // Modifiers
 
 $u-widths-modifiers-enabled: true !default;
+$u-width-paddings-enabled: true !default;
 
 // Breakpoints
 
@@ -64,6 +69,14 @@ $u-widths-breakpoints: $f-mq-breakpoints !default;
       @each $_class-name, $_max-width in $u-widths {
         &--#{$_class-name} {
           max-width: $_max-width;
+        }
+      }
+      @if $u-width-paddings-enabled {
+        @each $_class-name, $_padding in $u-width-paddings {
+          &--pd-#{$_class-name} {
+            padding-left: $_padding;
+            padding-right: $_padding;
+          }
         }
       }
     }
@@ -96,6 +109,18 @@ $u-widths-breakpoints: $f-mq-breakpoints !default;
         .o-wrapper--#{$_class-name}#{$s-config-breakpoint-separator}#{$_bp-name} {
           @include breakpoint($_bp-value) {
             max-width: $_max-width;
+          }
+        }
+      }
+    }
+    @if $u-width-paddings-enabled {
+      @each $_class-name, $_padding in $u-width-paddings {
+        @each $_bp-name, $_bp-value in $u-widths-breakpoints {
+          .o-wrapper--pd-#{$_class-name}#{$s-config-breakpoint-separator}#{$_bp-name} {
+            @include breakpoint($_bp-value) {
+              padding-left: $_padding;
+              padding-right: $_padding;
+            }
           }
         }
       }

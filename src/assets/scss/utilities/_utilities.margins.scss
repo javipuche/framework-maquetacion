@@ -14,27 +14,27 @@ $u-margin-enabled: true !default;
 
 $u-margin-spaces: $f-spaces !default;
 $u-margin-classes: (
-  "margin-top": (
+  "mrt": (
     "margin-top"
   ),
-  "margin-right": (
+  "mrr": (
     "margin-right"
   ),
-  "margin-bottom": (
+  "mrb": (
     "margin-bottom"
   ),
-  "margin-left": (
+  "mrl": (
     "margin-left"
   ),
   "margin-vertical": (
     "margin-top",
     "margin-bottom"
   ),
-  "margin-horizontal": (
+  "mrh": (
     "margin-left",
     "margin-right"
   ),
-  "margin" : (
+  "mr" : (
     "margin-top",
     "margin-right",
     "margin-bottom",

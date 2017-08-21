@@ -14,27 +14,27 @@ $u-padding-enabled: true !default;
 
 $u-padding-spaces: $f-spaces !default;
 $u-padding-classes: (
-  "padding-top": (
+  "pdt": (
     "padding-top"
   ),
-  "padding-right": (
+  "pdr": (
     "padding-right"
   ),
-  "padding-bottom": (
+  "pdb": (
     "padding-bottom"
   ),
-  "padding-left": (
+  "pdl": (
     "padding-left"
   ),
-  "padding-vertical": (
+  "pdv": (
     "padding-top",
     "padding-bottom"
   ),
-  "padding-horizontal": (
+  "pdh": (
     "padding-left",
     "padding-right"
   ),
-  "padding" : (
+  "pd" : (
     "padding-top",
     "padding-right",
     "padding-bottom",

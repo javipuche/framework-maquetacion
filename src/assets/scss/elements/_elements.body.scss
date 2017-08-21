@@ -1,8 +1,10 @@
 /* -----------------------------------------------------------------------------
- * DOCUMENT
+ * BODY
  */
 
 
-html {
-  box-sizing: border-box;
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
 }

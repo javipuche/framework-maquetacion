@@ -9,18 +9,18 @@ $f-mq-media-type: 'screen' !default;
 
 // Main breakpoint variables
 
-$f-mq-breakpoint-small: 544px !default;
-$f-mq-breakpoint-medium: 768px !default;
-$f-mq-breakpoint-large: 1024px !default;
-$f-mq-breakpoint-xlarge: 1200px !default;
-$f-mq-breakpoint-xxlage: 1440px !default;
+$f-mq-breakpoint-s: 544px !default;
+$f-mq-breakpoint-m: 768px !default;
+$f-mq-breakpoint-l: 1024px !default;
+$f-mq-breakpoint-xl: 1200px !default;
+$f-mq-breakpoint-xxl: 1440px !default;
 
 // Breakpoints map
 
 $f-mq-breakpoints: (
-  small: $f-mq-breakpoint-small,
-  medium: $f-mq-breakpoint-medium,
-  large: $f-mq-breakpoint-large,
-  xlarge: $f-mq-breakpoint-xlarge,
-  xxlarge: $f-mq-breakpoint-xxlage
+  s: $f-mq-breakpoint-s,
+  m: $f-mq-breakpoint-m,
+  l: $f-mq-breakpoint-l,
+  xl: $f-mq-breakpoint-xl,
+  xxl: $f-mq-breakpoint-xxl
 ) !default;
