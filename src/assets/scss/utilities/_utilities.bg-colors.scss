@@ -21,8 +21,8 @@ $u-bg-colors-maps: $f-colors !default;
 @if ($u-bg-colors-enabled) {
   @each $_bg-color-group-name, $_bg-color-group-map in $u-bg-colors-maps {
     @each $_bg-color-name, $_bg-color-value in $_bg-color-group-map {
-      .u-color-#{$_bg-color-name} {
-        color: $_bg-color-value !important;
+      .u-bg-color-#{$_bg-color-name} {
+        background-color: $_bg-color-value !important;
       }
     }
   }

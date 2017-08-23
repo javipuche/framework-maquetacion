@@ -3,11 +3,15 @@
  */
 
 
+// Import colors files
+// -----------------------------------------------------------------------------
+
 @import "foundations.colors-brand";
 @import "foundations.colors-neutral";
 
 
-// Colors map
+// Map
+// -----------------------------------------------------------------------------
 
 $f-colors: (
   "brand": $f-colors-brand,

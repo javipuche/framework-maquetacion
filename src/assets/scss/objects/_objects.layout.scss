@@ -53,7 +53,7 @@ $o-layout-gutters-breakpoints-enabled: true !default;
 $o-layout-breakpoints: $f-mq-breakpoints !default;
 
 
-// Selector
+// Mixins
 // -----------------------------------------------------------------------------
 
 @mixin o-layout {
@@ -65,34 +65,6 @@ $o-layout-breakpoints: $f-mq-breakpoints !default;
   box-sizing: border-box;
   width: 100%;
 }
-
-// Output
-
-@if $o-layout-enabled {
-  .o-layout {
-    @include o-layout;
-  }
-
-  .o-layout__item {
-    @include o-layout-item;
-  }
-}
-
-// Breakpoints output
-
-@if $o-layout-enabled and $o-layout-breakpoints-enabled {
-  @each $_bp-name, $_bp-value in $o-layout-breakpoints {
-    .o-layout#{$s-config-breakpoint-separator}#{$_bp-name} {
-      @include breakpoint($_bp-value) {
-        @include o-layout;
-      }
-    }
-  }
-}
-
-
-// Gutter
-// -----------------------------------------------------------------------------
 
 @mixin o-layout-gutter($_bp-separator: null, $_bp-name: null) {
   @each $_space-name, $_space-value in $o-layout-gutters {
@@ -117,13 +89,41 @@ $o-layout-breakpoints: $f-mq-breakpoints !default;
   }
 }
 
+
 // Output
+// -----------------------------------------------------------------------------
+
+@if $o-layout-enabled {
+  .o-layout {
+    @include o-layout;
+  }
+
+  .o-layout__item {
+    @include o-layout-item;
+  }
+}
+
+
+// Breakpoints
+// -----------------------------------------------------------------------------
+
+@if $o-layout-enabled and $o-layout-breakpoints-enabled {
+  @each $_bp-name, $_bp-value in $o-layout-breakpoints {
+    .o-layout#{$s-config-breakpoint-separator}#{$_bp-name} {
+      @include breakpoint($_bp-value) {
+        @include o-layout;
+      }
+    }
+  }
+}
+
+
+// Gutter output
+// -----------------------------------------------------------------------------
 
 @if $o-layout-enabled and $o-layout-gutters-enabled {
   @include o-layout-gutter;
 }
-
-// Breakpoints output
 
 @if $o-layout-enabled and $o-layout-gutters-enabled and $o-layout-gutters-breakpoints-enabled {
   @each $_bp-name, $_bp-value in $o-layout-breakpoints {

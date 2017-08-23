@@ -3,13 +3,12 @@
  */
 
 
- // Black & White
+// Black & White
 
 $f-color-neutral-white: #ffffff !default;
 $f-color-neutral-black: #000000 !default;
 
-
- // Grey shades
+// Grey shades
 
 $f-color-neutral-grey-lightest: darken(#fff, 5%) !default;
 $f-color-neutral-grey-lighter: darken(#fff, 10%) !default;
@@ -18,7 +17,6 @@ $f-color-neutral-grey: darken(#fff, 30%) !default;
 $f-color-neutral-grey-dark: darken(#fff, 70%) !default;
 $f-color-neutral-grey-darker: darken(#fff, 80%) !default;
 $f-color-neutral-grey-darkest: darken(#fff, 90%) !default;
-
 
 // Map
 

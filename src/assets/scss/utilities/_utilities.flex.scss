@@ -10,6 +10,35 @@
 
 $u-flex-enabled: true !default;
 
+// Clases
+
+$u-flex-classes: (
+  null: (display: flex),
+  "inline": (display: inline-flex),
+  "wrap": (flex-wrap: wrap),
+  "wrap-reverse": (flex-wrap: wrap-reverse),
+  "nowrap": (flex-wrap: nowrap),
+  "column": (flex-direction: column),
+  "column-reverse": (flex-direction: column-reverse),
+  "row": (flex-direction: row),
+  "row-reverse": (flex-direction: row-reverse),
+  "left": (justify-content: flex-start),
+  "center": (justify-content: center),
+  "right": (justify-content: flex-end),
+  "between": (justify-content: space-between),
+  "around": (justify-content: space-around),
+  "top": (align-items: flex-start),
+  "middle": (align-items: center),
+  "bottom": (align-items: flex-end),
+  "baseline": (align-items: baseline),
+  "self-start": (align-self: flex-start),
+  "self-end": (align-self: flex-end),
+  "self-stretch": (align-self: stretch),
+  "self-center": (align-self: center),
+  "grow-1": (flex-grow: 1),
+  "first": (order: -1)
+) !default;
+
 // Breakpoints
 
 $u-flex-breakpoints-enabled: true !default;
@@ -20,104 +49,12 @@ $u-flex-breakpoints: $f-mq-breakpoints !default;
 // -----------------------------------------------------------------------------
 
 @mixin u-flex($_bp-separator: null, $_bp-name: null) {
-  .u-flex#{$_bp-separator}#{$_bp-name} {
-    display: flex !important;
-  }
-
-  .u-flex-inline#{$_bp-separator}#{$_bp-name} {
-    display: inline-flex !important;
-  }
-
-  .u-flex-wrap#{$_bp-separator}#{$_bp-name} {
-    flex-wrap: wrap !important;
-  }
-
-  .u-flex-wrap-reverse#{$_bp-separator}#{$_bp-name} {
-    flex-wrap: wrap-reverse !important;
-  }
-
-  .u-flex-nowrap#{$_bp-separator}#{$_bp-name} {
-    flex-wrap: nowrap !important;
-  }
-
-  .u-flex-column#{$_bp-separator}#{$_bp-name} {
-    flex-direction: column !important;
-  }
-
-  .u-flex-column-reverse#{$_bp-separator}#{$_bp-name} {
-    flex-direction: column-reverse !important;
-  }
-
-  .u-flex-row#{$_bp-separator}#{$_bp-name} {
-    flex-direction: row !important;
-  }
-
-  .u-flex-row-reverse#{$_bp-separator}#{$_bp-name} {
-    flex-direction: row-reverse !important;
-  }
-
-  .u-flex-left#{$_bp-separator}#{$_bp-name} {
-    justify-content: flex-start;
-  }
-
-  .u-flex-center#{$_bp-separator}#{$_bp-name} {
-    justify-content: center !important;
-  }
-
-  .u-flex-right#{$_bp-separator}#{$_bp-name} {
-    justify-content: flex-end !important;
-  }
-
-  .u-flex-between#{$_bp-separator}#{$_bp-name} {
-    justify-content: space-between !important;
-  }
-
-  .u-flex-around#{$_bp-separator}#{$_bp-name} {
-    justify-content: space-around !important;
-  }
-
-  .u-flex-top#{$_bp-separator}#{$_bp-name} {
-    align-items: flex-start !important;
-  }
-
-  .u-flex-middle#{$_bp-separator}#{$_bp-name} {
-    align-items: center !important;
-  }
-
-  .u-flex-bottom#{$_bp-separator}#{$_bp-name} {
-    align-items: flex-end !important;
-  }
-
-  .u-flex-baseline#{$_bp-separator}#{$_bp-name} {
-    align-items: baseline !important;
-  }
-
-  .u-flex-self-start#{$_bp-separator}#{$_bp-name} {
-    align-self: flex-start !important;
-  }
-
-  .u-flex-self-end#{$_bp-separator}#{$_bp-name} {
-    align-self: flex-end !important;
-  }
-
-  .u-flex-self-stretch#{$_bp-separator}#{$_bp-name} {
-    align-self: stretch !important;
-  }
-
-  .u-flex-self-baseline#{$_bp-separator}#{$_bp-name} {
-    align-self: baseline !important;
-  }
-
-  .u-flex-self-center#{$_bp-separator}#{$_bp-name} {
-    align-self: center !important;
-  }
-
-  .u-flex-grow-1#{$_bp-separator}#{$_bp-name} {
-    flex-grow: 1 !important;
-  }
-
-  .u-flex-first#{$_bp-separator}#{$_bp-name} {
-    order: -1 !important;
+  @each $_properties, $_values in $u-flex-classes {
+    .u-flex#{if($_properties, "-", "")}#{$_properties}#{$_bp-separator}#{$_bp-name} {
+      @each $_property, $_value in $_values {
+        #{$_property}: $_value !important;
+      }
+    }
   }
 }
 

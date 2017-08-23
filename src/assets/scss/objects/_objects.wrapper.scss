@@ -39,7 +39,6 @@ $u-widths: (
 // Modifiers
 
 $u-widths-modifiers-enabled: true !default;
-$u-width-paddings-enabled: true !default;
 
 // Breakpoints
 
@@ -69,14 +68,6 @@ $u-widths-breakpoints: $f-mq-breakpoints !default;
       @each $_class-name, $_max-width in $u-widths {
         &--#{$_class-name} {
           max-width: $_max-width;
-        }
-      }
-      @if $u-width-paddings-enabled {
-        @each $_class-name, $_padding in $u-width-paddings {
-          &--pd-#{$_class-name} {
-            padding-left: $_padding;
-            padding-right: $_padding;
-          }
         }
       }
     }
@@ -109,18 +100,6 @@ $u-widths-breakpoints: $f-mq-breakpoints !default;
         .o-wrapper--#{$_class-name}#{$s-config-breakpoint-separator}#{$_bp-name} {
           @include breakpoint($_bp-value) {
             max-width: $_max-width;
-          }
-        }
-      }
-    }
-    @if $u-width-paddings-enabled {
-      @each $_class-name, $_padding in $u-width-paddings {
-        @each $_bp-name, $_bp-value in $u-widths-breakpoints {
-          .o-wrapper--pd-#{$_class-name}#{$s-config-breakpoint-separator}#{$_bp-name} {
-            @include breakpoint($_bp-value) {
-              padding-left: $_padding;
-              padding-right: $_padding;
-            }
           }
         }
       }
