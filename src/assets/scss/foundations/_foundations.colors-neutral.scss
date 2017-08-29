@@ -3,31 +3,38 @@
  */
 
 
-// Black & White
+// Pure Black & Pure White
 
-$f-color-neutral-white: #ffffff !default;
-$f-color-neutral-black: #000000 !default;
+$f-color-neutral-celestial: #ffffff !default;
+$f-color-neutral-abyss: #000000 !default;
 
 // Grey shades
 
-$f-color-neutral-grey-lightest: darken(#fff, 5%) !default;
-$f-color-neutral-grey-lighter: darken(#fff, 10%) !default;
-$f-color-neutral-grey-light: darken(#fff, 20%) !default;
-$f-color-neutral-grey: darken(#fff, 30%) !default;
-$f-color-neutral-grey-dark: darken(#fff, 70%) !default;
-$f-color-neutral-grey-darker: darken(#fff, 80%) !default;
-$f-color-neutral-grey-darkest: darken(#fff, 90%) !default;
+$f-color-neutral-white: $f-color-neutral-celestial !default;
+$f-color-neutral-snow: #F9FAFC !default;
+$f-color-neutral-snow-dark: #EFF2F7 !default;
+$f-color-neutral-snow-darker: #E5E9F2 !default;
+$f-color-neutral-smoke: #E0E6ED !default;
+$f-color-neutral-smoke-dark: #D3DCE6 !default;
+$f-color-neutral-smoke-darker: #C0CCDA !default;
+$f-color-neutral-silver: #8492A6 !default;
+$f-color-neutral-salte: #3C4858 !default;
+$f-color-neutral-steel: #273444 !default;
+$f-color-neutral-black: #1F2D3D !default;
 
 // Map
 
 $f-colors-neutral: (
   "white": $f-color-neutral-white,
-  "black": $f-color-neutral-black,
-  "grey": $f-color-neutral-grey,
-  "grey-light": $f-color-neutral-grey-light,
-  "grey-lighter": $f-color-neutral-grey-lighter,
-  "grey-lightest": $f-color-neutral-grey-lightest,
-  "grey-dark": $f-color-neutral-grey-dark,
-  "grey-darker": $f-color-neutral-grey-darker,
-  "grey-darkest": $f-color-neutral-grey-darkest
+  "abyss": $f-color-neutral-abyss,
+  "snow": $f-color-neutral-snow,
+  "snow-dark": $f-color-neutral-snow-dark,
+  "snow-darker": $f-color-neutral-snow-darker,
+  "smoke": $f-color-neutral-smoke,
+  "smoke-dark": $f-color-neutral-smoke-dark,
+  "smoke-darker": $f-color-neutral-smoke-darker,
+  "silver": $f-color-neutral-silver,
+  "salte": $f-color-neutral-salte,
+  "steel": $f-color-neutral-steel,
+  "black": $f-color-neutral-black
 ) !default;

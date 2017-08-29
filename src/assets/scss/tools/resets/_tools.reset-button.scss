@@ -1,0 +1,16 @@
+/* -----------------------------------------------------------------------------
+ * RESET BUTTON
+ */
+
+
+@mixin reset-button {
+  padding: 0;
+  outline: none;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  appearance: none;
+}

@@ -88,7 +88,7 @@ function sass() {
 
     let pluginsPostcss = [
         autoprefixer({
-            browsers: ['last 20 versions']
+            browsers: ['last 4 versions']
         }),
         cssmqpacker({
             sort: true

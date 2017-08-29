@@ -12,7 +12,7 @@ $u-text-transform-enabled: true !default;
 
 // Properties
 
-$u-text-transform-values: (uppercase) !default;
+$u-text-transform-values: (lowercase, uppercase, capitalize) !default;
 
 
 // Output
