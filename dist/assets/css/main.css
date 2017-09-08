@@ -1315,7 +1315,7 @@ table {
   color: #273444 !important; }
 
 .u-color-black {
-  color: #1F2D3D !important; }
+  color: #000000 !important; }
 
 /* -----------------------------------------------------------------------------
  * BG COLORS
@@ -1366,7 +1366,7 @@ table {
   background-color: #273444 !important; }
 
 .u-bg-color-black {
-  background-color: #1F2D3D !important; }
+  background-color: #000000 !important; }
 
 /* -----------------------------------------------------------------------------
  * RADIUSES
@@ -1390,13 +1390,13 @@ table {
  * SHADOWS
  */
 .u-shadow-distant {
-  box-shadow: 0 2px 8px rgba(31, 45, 61, 0.05) !important; }
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important; }
 
 .u-shadow-close {
-  box-shadow: 0 1px 2px 0 rgba(31, 45, 61, 0.15) !important; }
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15) !important; }
 
 .u-shadow-subtle {
-  box-shadow: 0 0 1px 1px rgba(31, 45, 61, 0.15) !important; }
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15) !important; }
 
 @media screen and (min-width: 34em) {
   .o-wrapper\@s {

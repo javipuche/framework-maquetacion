@@ -11,6 +11,7 @@ import $ from 'jquery';
 // -----------------------------------------------------------------------------
 
 // Example
+
 function example () {
     return 'Example function Initialized';
 }
@@ -25,6 +26,7 @@ app.commons.init = (function () {
     var init = function () {
 
         // Example
+
         this.example = function() {
             console.log(example());
         };
