@@ -32,7 +32,6 @@
     "caniuse-db": "^1.0.30000709",
     "compression": "^1.7.0",
     "css-mqpacker": "^5.0.1",
-    "cssnano": "^3.10.0",
     "del": "^2.2.2",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-benchmark": "^1.1.1",

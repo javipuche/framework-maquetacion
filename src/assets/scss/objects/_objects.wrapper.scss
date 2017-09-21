@@ -8,49 +8,27 @@
 
 // Toggling
 
-$u-widths-enabled: true !default;
-
-// Widths
-
-$u-width-none: 0 !default;
-$u-width-t: 300px !default;
-$u-width-s: 600px !default;
-$u-width-m: 800px !default;
-$u-width-l: 1200px !default;
-$u-width-xl: 1400px !default;
-$u-width-xxl: 1600px !default;
-
-// Paddings
-
-$u-width-paddings: $f-spaces !default;
+$o-wrappers-enabled: true !default;
 
 // Map
 
-$u-widths: (
-  "none": $u-width-none,
-  "t": $u-width-t,
-  "s": $u-width-s,
-  "m": $u-width-m,
-  "l": $u-width-l,
-  "xl": $u-width-xl,
-  "xxl": $u-width-xxl
-) !default;
+$o-wrappers: $f-wrappers !default;
 
 // Modifiers
 
-$u-widths-modifiers-enabled: true !default;
+$o-wrappers-modifiers-enabled: true !default;
 
 // Breakpoints
 
-$u-widths-breakpoints-enabled: true !default;
-$u-widths-modifiers-breakpoints-enabled: true !default;
-$u-widths-breakpoints: $f-mq-breakpoints !default;
+$o-wrappers-breakpoints-enabled: true !default;
+$o-wrappers-modifiers-breakpoints-enabled: true !default;
+$o-wrappers-breakpoints: $f-mq-breakpoints !default;
 
 
-// Mixin
+// Mixins
 // -----------------------------------------------------------------------------
 
-@mixin u-wrapper {
+@mixin o-wrapper {
   margin-right: auto;
   margin-left: auto;
   width: 100%;
@@ -60,14 +38,14 @@ $u-widths-breakpoints: $f-mq-breakpoints !default;
 // Output
 // -----------------------------------------------------------------------------
 
-@if $u-widths-enabled {
+@if $o-wrappers-enabled {
   .o-wrapper {
-    @include u-wrapper;
+    @include o-wrapper;
 
-    @if $u-widths-modifiers-enabled {
-      @each $_class-name, $_max-width in $u-widths {
+    @if $o-wrappers-modifiers-enabled {
+      @each $_class-name, $_max-wrapper in $o-wrappers {
         &--#{$_class-name} {
-          max-width: $_max-width;
+          max-width: $_max-wrapper;
         }
       }
     }
@@ -78,15 +56,15 @@ $u-widths-breakpoints: $f-mq-breakpoints !default;
 // Breakpoints output
 // -----------------------------------------------------------------------------
 
-@if $u-widths-enabled and $u-widths-breakpoints-enabled {
+@if $o-wrappers-enabled and $o-wrappers-breakpoints-enabled {
 
   // Object
 
-  @if $u-widths-modifiers-enabled {
-    @each $_bp-name, $_bp-value in $u-widths-breakpoints {
+  @if $o-wrappers-modifiers-enabled {
+    @each $_bp-name, $_bp-value in $o-wrappers-breakpoints {
       .o-wrapper#{$s-config-breakpoint-separator}#{$_bp-name} {
         @include breakpoint($_bp-value) {
-          @include u-wrapper;
+          @include o-wrapper;
         }
       }
     }
@@ -94,12 +72,12 @@ $u-widths-breakpoints: $f-mq-breakpoints !default;
 
   // Sizes
 
-  @if $u-widths-modifiers-breakpoints-enabled {
-    @each $_class-name, $_max-width in $u-widths {
-      @each $_bp-name, $_bp-value in $u-widths-breakpoints {
+  @if $o-wrappers-modifiers-breakpoints-enabled {
+    @each $_class-name, $_max-wrapper in $o-wrappers {
+      @each $_bp-name, $_bp-value in $o-wrappers-breakpoints {
         .o-wrapper--#{$_class-name}#{$s-config-breakpoint-separator}#{$_bp-name} {
           @include breakpoint($_bp-value) {
-            max-width: $_max-width;
+            max-width: $_max-wrapper;
           }
         }
       }

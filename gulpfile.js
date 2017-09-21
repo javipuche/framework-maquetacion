@@ -3,9 +3,8 @@
 
 'use strict';
 
-/* =============================================================================
-PLUGINS
-============================================================================= */
+// Plugins
+// -----------------------------------------------------------------------------
 
 const gulp = require('gulp'); // Gulp
 const del = require('del'); // Borra archivos
@@ -21,8 +20,8 @@ const argv = require('yargs').argv; // Pasar variables por consola
 const compression = require('compression'); // Gzip
 const babelify = require('babelify'); // Nueva sintaxis js
 const browserify = require('browserify'); // Para crear modulos
-const buffer = require('vinyl-buffer');
-const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer'); // Buffer para compilar
+const source = require('vinyl-source-stream'); // Streaming para compilar
 
 // CSS
 const sassToCSS = require('gulp-sass'); // Compilador de SASS
@@ -31,11 +30,9 @@ const cssunit = require('gulp-css-unit'); // Convierte unidades
 const postcss = require('gulp-postcss'); // Libreria necesaria para otros plugins
 const autoprefixer = require('autoprefixer'); // Añade los prefijos necesarios a las propiedades CSS
 const cssmqpacker = require('css-mqpacker'); // Junta las Mediaqueries y las mueve al final
-const cssnano = require('cssnano'); // Minifica el CSS
 
-/* =============================================================================
-TASKS
-============================================================================= */
+// Tasks
+// -----------------------------------------------------------------------------
 
 gulp.task('build',
     gulp.series(clean, gulp.parallel(pages, scripts, images, copy, sass))
@@ -47,9 +44,8 @@ gulp.task('default',
     }
 ));
 
-/* =============================================================================
-FUNCTIONS
-============================================================================= */
+// Functions
+// -----------------------------------------------------------------------------
 
 // Refresca el navegador
 function reloadBrowser(done) {
@@ -85,7 +81,7 @@ function resetPages(done) {
 
 // Compila el Sass a CSS
 function sass() {
-
+    let sassOptions = {};
     let pluginsPostcss = [
         autoprefixer({
             browsers: ['last 4 versions']
@@ -96,23 +92,24 @@ function sass() {
     ];
 
     if (argv.production) {
-        let pluginsPostcssProduction = [
-            cssnano({
-                discardUnused: {
-                    fontFace: false
-                }
-            })
-        ];
+        let pluginsPostcssProduction = [];
 
         pluginsPostcss = pluginsPostcss.concat(pluginsPostcssProduction);
+
+        sassOptions = {
+            outputStyle: 'compressed'
+        };
     }
 
     return gulp.src([
         'src/assets/scss/main.scss'
     ])
     .pipe(gulpif(!argv.production, sourcemaps.init()))
-    .pipe(sassToCSS()
-    .on('error', sassToCSS.logError))
+    .pipe(sassToCSS(sassOptions).on('error', sassToCSS.logError))
+    .pipe(gulpif(argv.production, cssunit({
+        type     :    'px-to-rem',
+        rootSize :    16
+    })))
     .pipe(postcss(pluginsPostcss))
     .pipe(gulpif(!argv.production, sourcemaps.write('.', { sourceRoot: '/' })))
     .pipe(plumber())
