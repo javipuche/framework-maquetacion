@@ -1,0 +1,14 @@
+/* -----------------------------------------------------------------------------
+ * BUTTONS
+ */
+
+
+// Variables
+
+$c-btn-padding: $f-space-xs $f-space-m;
+
+// Output
+
+.c-btn {
+  @include button-base($c-btn-padding);
+}

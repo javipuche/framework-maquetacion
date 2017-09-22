@@ -143,7 +143,12 @@ html {
 /* -----------------------------------------------------------------------------
  * HEADINGS
  */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   margin-bottom: 32px; }
 
@@ -470,6 +475,66 @@ table {
 /* -----------------------------------------------------------------------------
  * COMPONENTS
  */
+/* -----------------------------------------------------------------------------
+ * BUTTONS
+ */
+.c-btn {
+  padding: 0;
+  outline: none;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  cursor: pointer;
+  outline: none;
+  padding: 8px 24px; }
+
+/* -----------------------------------------------------------------------------
+ * HEADINGS
+ */
+.c-h1,
+.c-h2,
+.c-h3,
+.c-h4,
+.c-h5,
+.c-h6 {
+  font-weight: 700;
+  margin-bottom: 0; }
+
+.c-h1 {
+  font-size: 48px;
+  line-height: 56px; }
+
+.c-h2 {
+  font-size: 40px;
+  line-height: 48px; }
+
+.c-h3 {
+  font-size: 32px;
+  line-height: 40px; }
+
+.c-h4 {
+  font-size: 24px;
+  line-height: 32px; }
+
+.c-h5 {
+  font-size: 18px;
+  line-height: 26px; }
+
+.c-h6 {
+  font-size: 16px;
+  line-height: 24px; }
+
 /* -----------------------------------------------------------------------------
  * OVERRIDES
  */
