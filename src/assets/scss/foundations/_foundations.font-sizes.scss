@@ -12,7 +12,8 @@ $f-font-size-m: $s-core-font-size !default;
 $f-font-size-l: 18px !default;
 $f-font-size-xl: 24px !default;
 $f-font-size-xxl: 32px !default;
-$f-font-size-xxxl: 48px !default;
+$f-font-size-xxxl: 40px !default;
+$f-font-size-h: 48px !default;
 
 // Font sizes map
 
@@ -25,4 +26,5 @@ $f-font-sizes: (
   "xl": $f-font-size-xl,
   "xxl": $f-font-size-xxl,
   "xxxl": $f-font-size-xxxl,
+  "h": $f-font-size-h,
 ) !default;

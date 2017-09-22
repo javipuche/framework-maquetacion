@@ -3,6 +3,17 @@
  */
 
 
+// Variables
+
+$e-document-font-family: $f-font-family-primary !default;
+$e-document-font-size: $f-font-size-m !default;
+$e-document-line-height: $f-line-height-m !default;
+
+// Output
+
 html {
   box-sizing: border-box;
+  font-family: $e-document-font-family;
+  font-size: $e-document-font-size;
+  line-height: $e-document-line-height;
 }

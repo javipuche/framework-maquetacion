@@ -10,7 +10,7 @@ $f-space: 8px !default;
 // Space variants
 
 $f-space-none: 0 !default;
-$f-space-t: $f-space !default;
+$f-space-xs: $f-space !default;
 $f-space-s: round($f-space * 2) !default;
 $f-space-m: round($f-space * 3) !default;
 $f-space-l: round($f-space * 4) !default;
@@ -23,7 +23,7 @@ $f-space-h: round($f-space * 12) !default;
 
 $f-spaces: (
   "none": $f-space-none,
-  "t": $f-space-t,
+  "xs": $f-space-xs,
   "s": $f-space-s,
   "m": $f-space-m,
   "l": $f-space-l,

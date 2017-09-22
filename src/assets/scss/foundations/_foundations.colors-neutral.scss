@@ -10,31 +10,28 @@ $f-color-neutral-abyss: #000000 !default;
 
 // Grey shades
 
-$f-color-neutral-white: $f-color-neutral-celestial !default;
-$f-color-neutral-snow: #F9FAFC !default;
-$f-color-neutral-snow-dark: #EFF2F7 !default;
-$f-color-neutral-snow-darker: #E5E9F2 !default;
-$f-color-neutral-smoke: #E0E6ED !default;
-$f-color-neutral-smoke-dark: #D3DCE6 !default;
-$f-color-neutral-smoke-darker: #C0CCDA !default;
-$f-color-neutral-silver: #8492A6 !default;
-$f-color-neutral-salte: #3C4858 !default;
-$f-color-neutral-steel: #273444 !default;
-$f-color-neutral-black: $f-color-neutral-abyss !default;
+$f-color-neutral-shade-0: $f-color-neutral-celestial !default;
+$f-color-neutral-shade-100: #F8F9F9 !default;
+$f-color-neutral-shade-200: #EDEFF0 !default;
+$f-color-neutral-shade-300: #E2E4E6 !default;
+$f-color-neutral-shade-400: #D6DADC !default;
+$f-color-neutral-shade-500: #838C91 !default;
+$f-color-neutral-shade-600: #676D70 !default;
+$f-color-neutral-shade-700: #333333 !default;
+$f-color-neutral-shade-800: #222222 !default;
+$f-color-neutral-shade-900: $f-color-neutral-abyss !default;
 
 // Map
 
 $f-colors-neutral: (
-  "white": $f-color-neutral-white,
-  "abyss": $f-color-neutral-abyss,
-  "snow": $f-color-neutral-snow,
-  "snow-dark": $f-color-neutral-snow-dark,
-  "snow-darker": $f-color-neutral-snow-darker,
-  "smoke": $f-color-neutral-smoke,
-  "smoke-dark": $f-color-neutral-smoke-dark,
-  "smoke-darker": $f-color-neutral-smoke-darker,
-  "silver": $f-color-neutral-silver,
-  "salte": $f-color-neutral-salte,
-  "steel": $f-color-neutral-steel,
-  "black": $f-color-neutral-black
+  "shade-0": $f-color-neutral-shade-0,
+  "shade-100": $f-color-neutral-shade-100,
+  "shade-200": $f-color-neutral-shade-200,
+  "shade-300": $f-color-neutral-shade-300,
+  "shade-400": $f-color-neutral-shade-400,
+  "shade-500": $f-color-neutral-shade-500,
+  "shade-600": $f-color-neutral-shade-600,
+  "shade-700": $f-color-neutral-shade-700,
+  "shade-800": $f-color-neutral-shade-800,
+  "shade-900": $f-color-neutral-shade-900,
 ) !default;
