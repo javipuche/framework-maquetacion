@@ -9,7 +9,7 @@
   }
   @else {
      @if unitless($value){
-      $value: $value + 0;
+      $value: $value + 0px;
     }
     @return $value / $baseline * 1em;
   }
