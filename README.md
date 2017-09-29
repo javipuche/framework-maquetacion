@@ -1,6 +1,6 @@
 # Framework maquetación
 
-Base para crear un framework a medida del proyecto. Se recomienda usarlo solo para proyectos grandes y que tengan previsto una escalabilidad bastante grande.
+Base para crear un framework a medida del proyecto. Se recomienda usarlo solo para proyectos grandes y que tengan prevista una escalabilidad bastante grande.
 
 ## Instalación
 
