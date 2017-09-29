@@ -1,22 +1,23 @@
-Próximamente estará la documentación más detallada.
+# Framework maquetación
 
-# Instalación
+Base para crear un framework a medida del proyecto. Se recomienda usarlo solo para proyectos grandes y que tengan previsto una escalabilidad bastante grande.
+
+## Instalación
 
 Antes de poder instalar lo necesario para el proyecto, es obligatorio realizar los siguientes requisitos.
 
-## Requisitos
+### Requisitos
 
 Para poder usar la maqueta tienes que tener instalados en el ordenador:
 
 - Node
 - Gulp (Versión 4)
-- Bower
 
-### Node
+#### Node
 
 Para instalar Node puedes descargarlo para los diferentes sistemas operativos aquí: [www.nodejs.org](https://nodejs.org/es/download/). Una vez descargado solo tienes que seguir el proceso de instalación de propio launcher.
 
-### Gulp
+#### Gulp
 
 ***Nota*** *Recuerda estar en el directorio del proyecto antes de hacer estos pasos.*
 
@@ -44,7 +45,7 @@ npm install -g gulp-cli
 npm install 'gulpjs/gulp.git#4.0'
 ```
 
-#### Posibles errores
+##### Posibles errores
 
 Si a la hora de instalar o ejecutar Gulp sale algún error referente a `/usr/local/share/man/man1/gulp.1` ejecutamos:
 
@@ -54,15 +55,7 @@ Si a la hora de instalar o ejecutar Gulp sale algún error referente a `/usr/loc
 rm /usr/local/share/man/man1/gulp.1
 ```
 
-### Bower
-
-Instalado ya Gulp, iniciamos la instalación de Bower con:
-
-```bash
-npm install -g bower
-```
-
-## Librerías
+### Librerías
 
 Instalados los requisitos es necesario instalar todas las librerías que necesita el proyecto. Para ello debemos ejecutar en la terminal:
 
@@ -70,13 +63,7 @@ Instalados los requisitos es necesario instalar todas las librerías que necesit
 npm install
 ```
 
-Tardará un poco en acabar la instalación y una vez finalice ejecutamos:
-
-```bash
-bower install
-```
-
-## Comandos básicos
+### Comandos básicos
 
 Una vez instalado todo lo necesario podemos compilar y lanzar el servidor mediante:
 
