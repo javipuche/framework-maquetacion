@@ -3,14 +3,14 @@
  */
 
 
-@function px-to-em($value, $baseline: $s-core-font-size) {
-  @if unit($value) == 'em' {
-    @return $value;
+@function px-to-em($_value, $_baseline: $s-core-font-size) {
+  @if unit($_value) == 'em' {
+    @return $_value;
   }
   @else {
-     @if unitless($value){
-      $value: $value + 0px;
+     @if unitless($_value){
+      $_value: $_value + 0px;
     }
-    @return $value / $baseline * 1em;
+    @return $_value / $_baseline * 1em;
   }
 }
