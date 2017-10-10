@@ -11,15 +11,14 @@
 @function map-next-value($_map, $_input) {
   $_values: map-values($_map);
 
-  @if number($_input) or unit($_input) == 'px' {
-    @return $_input;
-  }
-
-
   @each $_value in $_values {
-     @if px-to-em($_value) >= px-to-em($_input){
+     @if px-to-em($_value) > px-to-em($_input){
       @return $_value;
     }
+  }
+
+  @if number($_input) or unit($_input) == 'px' {
+    @return $_input;
   }
 
   @error 'Next value not defined.';

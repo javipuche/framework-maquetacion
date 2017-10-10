@@ -443,8 +443,6 @@ table {
   .o-ratio__content {
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
     height: 100%;
     width: 100%; }
@@ -788,7 +786,7 @@ table {
 .u-mrl-none {
   margin-left: 0 !important; }
 
-.u-margin-vertical-none {
+.u-mrv-none {
   margin-top: 0 !important;
   margin-bottom: 0 !important; }
 
@@ -814,7 +812,7 @@ table {
 .u-mrl-xs {
   margin-left: 8px !important; }
 
-.u-margin-vertical-xs {
+.u-mrv-xs {
   margin-top: 8px !important;
   margin-bottom: 8px !important; }
 
@@ -840,7 +838,7 @@ table {
 .u-mrl-s {
   margin-left: 16px !important; }
 
-.u-margin-vertical-s {
+.u-mrv-s {
   margin-top: 16px !important;
   margin-bottom: 16px !important; }
 
@@ -866,7 +864,7 @@ table {
 .u-mrl-m {
   margin-left: 24px !important; }
 
-.u-margin-vertical-m {
+.u-mrv-m {
   margin-top: 24px !important;
   margin-bottom: 24px !important; }
 
@@ -892,7 +890,7 @@ table {
 .u-mrl-l {
   margin-left: 32px !important; }
 
-.u-margin-vertical-l {
+.u-mrv-l {
   margin-top: 32px !important;
   margin-bottom: 32px !important; }
 
@@ -918,7 +916,7 @@ table {
 .u-mrl-xl {
   margin-left: 48px !important; }
 
-.u-margin-vertical-xl {
+.u-mrv-xl {
   margin-top: 48px !important;
   margin-bottom: 48px !important; }
 
@@ -944,7 +942,7 @@ table {
 .u-mrl-xxl {
   margin-left: 64px !important; }
 
-.u-margin-vertical-xxl {
+.u-mrv-xxl {
   margin-top: 64px !important;
   margin-bottom: 64px !important; }
 
@@ -970,7 +968,7 @@ table {
 .u-mrl-xxxl {
   margin-left: 80px !important; }
 
-.u-margin-vertical-xxxl {
+.u-mrv-xxxl {
   margin-top: 80px !important;
   margin-bottom: 80px !important; }
 
@@ -996,7 +994,7 @@ table {
 .u-mrl-h {
   margin-left: 96px !important; }
 
-.u-margin-vertical-h {
+.u-mrv-h {
   margin-top: 96px !important;
   margin-bottom: 96px !important; }
 
@@ -1759,7 +1757,7 @@ table {
     margin-bottom: 0 !important; }
   .u-mrl-none\@s {
     margin-left: 0 !important; }
-  .u-margin-vertical-none\@s {
+  .u-mrv-none\@s {
     margin-top: 0 !important;
     margin-bottom: 0 !important; }
   .u-mrh-none\@s {
@@ -1778,7 +1776,7 @@ table {
     margin-bottom: 8px !important; }
   .u-mrl-xs\@s {
     margin-left: 8px !important; }
-  .u-margin-vertical-xs\@s {
+  .u-mrv-xs\@s {
     margin-top: 8px !important;
     margin-bottom: 8px !important; }
   .u-mrh-xs\@s {
@@ -1797,7 +1795,7 @@ table {
     margin-bottom: 16px !important; }
   .u-mrl-s\@s {
     margin-left: 16px !important; }
-  .u-margin-vertical-s\@s {
+  .u-mrv-s\@s {
     margin-top: 16px !important;
     margin-bottom: 16px !important; }
   .u-mrh-s\@s {
@@ -1816,7 +1814,7 @@ table {
     margin-bottom: 24px !important; }
   .u-mrl-m\@s {
     margin-left: 24px !important; }
-  .u-margin-vertical-m\@s {
+  .u-mrv-m\@s {
     margin-top: 24px !important;
     margin-bottom: 24px !important; }
   .u-mrh-m\@s {
@@ -1835,7 +1833,7 @@ table {
     margin-bottom: 32px !important; }
   .u-mrl-l\@s {
     margin-left: 32px !important; }
-  .u-margin-vertical-l\@s {
+  .u-mrv-l\@s {
     margin-top: 32px !important;
     margin-bottom: 32px !important; }
   .u-mrh-l\@s {
@@ -1854,7 +1852,7 @@ table {
     margin-bottom: 48px !important; }
   .u-mrl-xl\@s {
     margin-left: 48px !important; }
-  .u-margin-vertical-xl\@s {
+  .u-mrv-xl\@s {
     margin-top: 48px !important;
     margin-bottom: 48px !important; }
   .u-mrh-xl\@s {
@@ -1873,7 +1871,7 @@ table {
     margin-bottom: 64px !important; }
   .u-mrl-xxl\@s {
     margin-left: 64px !important; }
-  .u-margin-vertical-xxl\@s {
+  .u-mrv-xxl\@s {
     margin-top: 64px !important;
     margin-bottom: 64px !important; }
   .u-mrh-xxl\@s {
@@ -1892,7 +1890,7 @@ table {
     margin-bottom: 80px !important; }
   .u-mrl-xxxl\@s {
     margin-left: 80px !important; }
-  .u-margin-vertical-xxxl\@s {
+  .u-mrv-xxxl\@s {
     margin-top: 80px !important;
     margin-bottom: 80px !important; }
   .u-mrh-xxxl\@s {
@@ -1911,7 +1909,7 @@ table {
     margin-bottom: 96px !important; }
   .u-mrl-h\@s {
     margin-left: 96px !important; }
-  .u-margin-vertical-h\@s {
+  .u-mrv-h\@s {
     margin-top: 96px !important;
     margin-bottom: 96px !important; }
   .u-mrh-h\@s {
@@ -2438,7 +2436,7 @@ table {
     margin-bottom: 0 !important; }
   .u-mrl-none\@m {
     margin-left: 0 !important; }
-  .u-margin-vertical-none\@m {
+  .u-mrv-none\@m {
     margin-top: 0 !important;
     margin-bottom: 0 !important; }
   .u-mrh-none\@m {
@@ -2457,7 +2455,7 @@ table {
     margin-bottom: 8px !important; }
   .u-mrl-xs\@m {
     margin-left: 8px !important; }
-  .u-margin-vertical-xs\@m {
+  .u-mrv-xs\@m {
     margin-top: 8px !important;
     margin-bottom: 8px !important; }
   .u-mrh-xs\@m {
@@ -2476,7 +2474,7 @@ table {
     margin-bottom: 16px !important; }
   .u-mrl-s\@m {
     margin-left: 16px !important; }
-  .u-margin-vertical-s\@m {
+  .u-mrv-s\@m {
     margin-top: 16px !important;
     margin-bottom: 16px !important; }
   .u-mrh-s\@m {
@@ -2495,7 +2493,7 @@ table {
     margin-bottom: 24px !important; }
   .u-mrl-m\@m {
     margin-left: 24px !important; }
-  .u-margin-vertical-m\@m {
+  .u-mrv-m\@m {
     margin-top: 24px !important;
     margin-bottom: 24px !important; }
   .u-mrh-m\@m {
@@ -2514,7 +2512,7 @@ table {
     margin-bottom: 32px !important; }
   .u-mrl-l\@m {
     margin-left: 32px !important; }
-  .u-margin-vertical-l\@m {
+  .u-mrv-l\@m {
     margin-top: 32px !important;
     margin-bottom: 32px !important; }
   .u-mrh-l\@m {
@@ -2533,7 +2531,7 @@ table {
     margin-bottom: 48px !important; }
   .u-mrl-xl\@m {
     margin-left: 48px !important; }
-  .u-margin-vertical-xl\@m {
+  .u-mrv-xl\@m {
     margin-top: 48px !important;
     margin-bottom: 48px !important; }
   .u-mrh-xl\@m {
@@ -2552,7 +2550,7 @@ table {
     margin-bottom: 64px !important; }
   .u-mrl-xxl\@m {
     margin-left: 64px !important; }
-  .u-margin-vertical-xxl\@m {
+  .u-mrv-xxl\@m {
     margin-top: 64px !important;
     margin-bottom: 64px !important; }
   .u-mrh-xxl\@m {
@@ -2571,7 +2569,7 @@ table {
     margin-bottom: 80px !important; }
   .u-mrl-xxxl\@m {
     margin-left: 80px !important; }
-  .u-margin-vertical-xxxl\@m {
+  .u-mrv-xxxl\@m {
     margin-top: 80px !important;
     margin-bottom: 80px !important; }
   .u-mrh-xxxl\@m {
@@ -2590,7 +2588,7 @@ table {
     margin-bottom: 96px !important; }
   .u-mrl-h\@m {
     margin-left: 96px !important; }
-  .u-margin-vertical-h\@m {
+  .u-mrv-h\@m {
     margin-top: 96px !important;
     margin-bottom: 96px !important; }
   .u-mrh-h\@m {
@@ -3117,7 +3115,7 @@ table {
     margin-bottom: 0 !important; }
   .u-mrl-none\@l {
     margin-left: 0 !important; }
-  .u-margin-vertical-none\@l {
+  .u-mrv-none\@l {
     margin-top: 0 !important;
     margin-bottom: 0 !important; }
   .u-mrh-none\@l {
@@ -3136,7 +3134,7 @@ table {
     margin-bottom: 8px !important; }
   .u-mrl-xs\@l {
     margin-left: 8px !important; }
-  .u-margin-vertical-xs\@l {
+  .u-mrv-xs\@l {
     margin-top: 8px !important;
     margin-bottom: 8px !important; }
   .u-mrh-xs\@l {
@@ -3155,7 +3153,7 @@ table {
     margin-bottom: 16px !important; }
   .u-mrl-s\@l {
     margin-left: 16px !important; }
-  .u-margin-vertical-s\@l {
+  .u-mrv-s\@l {
     margin-top: 16px !important;
     margin-bottom: 16px !important; }
   .u-mrh-s\@l {
@@ -3174,7 +3172,7 @@ table {
     margin-bottom: 24px !important; }
   .u-mrl-m\@l {
     margin-left: 24px !important; }
-  .u-margin-vertical-m\@l {
+  .u-mrv-m\@l {
     margin-top: 24px !important;
     margin-bottom: 24px !important; }
   .u-mrh-m\@l {
@@ -3193,7 +3191,7 @@ table {
     margin-bottom: 32px !important; }
   .u-mrl-l\@l {
     margin-left: 32px !important; }
-  .u-margin-vertical-l\@l {
+  .u-mrv-l\@l {
     margin-top: 32px !important;
     margin-bottom: 32px !important; }
   .u-mrh-l\@l {
@@ -3212,7 +3210,7 @@ table {
     margin-bottom: 48px !important; }
   .u-mrl-xl\@l {
     margin-left: 48px !important; }
-  .u-margin-vertical-xl\@l {
+  .u-mrv-xl\@l {
     margin-top: 48px !important;
     margin-bottom: 48px !important; }
   .u-mrh-xl\@l {
@@ -3231,7 +3229,7 @@ table {
     margin-bottom: 64px !important; }
   .u-mrl-xxl\@l {
     margin-left: 64px !important; }
-  .u-margin-vertical-xxl\@l {
+  .u-mrv-xxl\@l {
     margin-top: 64px !important;
     margin-bottom: 64px !important; }
   .u-mrh-xxl\@l {
@@ -3250,7 +3248,7 @@ table {
     margin-bottom: 80px !important; }
   .u-mrl-xxxl\@l {
     margin-left: 80px !important; }
-  .u-margin-vertical-xxxl\@l {
+  .u-mrv-xxxl\@l {
     margin-top: 80px !important;
     margin-bottom: 80px !important; }
   .u-mrh-xxxl\@l {
@@ -3269,7 +3267,7 @@ table {
     margin-bottom: 96px !important; }
   .u-mrl-h\@l {
     margin-left: 96px !important; }
-  .u-margin-vertical-h\@l {
+  .u-mrv-h\@l {
     margin-top: 96px !important;
     margin-bottom: 96px !important; }
   .u-mrh-h\@l {
@@ -3796,7 +3794,7 @@ table {
     margin-bottom: 0 !important; }
   .u-mrl-none\@xl {
     margin-left: 0 !important; }
-  .u-margin-vertical-none\@xl {
+  .u-mrv-none\@xl {
     margin-top: 0 !important;
     margin-bottom: 0 !important; }
   .u-mrh-none\@xl {
@@ -3815,7 +3813,7 @@ table {
     margin-bottom: 8px !important; }
   .u-mrl-xs\@xl {
     margin-left: 8px !important; }
-  .u-margin-vertical-xs\@xl {
+  .u-mrv-xs\@xl {
     margin-top: 8px !important;
     margin-bottom: 8px !important; }
   .u-mrh-xs\@xl {
@@ -3834,7 +3832,7 @@ table {
     margin-bottom: 16px !important; }
   .u-mrl-s\@xl {
     margin-left: 16px !important; }
-  .u-margin-vertical-s\@xl {
+  .u-mrv-s\@xl {
     margin-top: 16px !important;
     margin-bottom: 16px !important; }
   .u-mrh-s\@xl {
@@ -3853,7 +3851,7 @@ table {
     margin-bottom: 24px !important; }
   .u-mrl-m\@xl {
     margin-left: 24px !important; }
-  .u-margin-vertical-m\@xl {
+  .u-mrv-m\@xl {
     margin-top: 24px !important;
     margin-bottom: 24px !important; }
   .u-mrh-m\@xl {
@@ -3872,7 +3870,7 @@ table {
     margin-bottom: 32px !important; }
   .u-mrl-l\@xl {
     margin-left: 32px !important; }
-  .u-margin-vertical-l\@xl {
+  .u-mrv-l\@xl {
     margin-top: 32px !important;
     margin-bottom: 32px !important; }
   .u-mrh-l\@xl {
@@ -3891,7 +3889,7 @@ table {
     margin-bottom: 48px !important; }
   .u-mrl-xl\@xl {
     margin-left: 48px !important; }
-  .u-margin-vertical-xl\@xl {
+  .u-mrv-xl\@xl {
     margin-top: 48px !important;
     margin-bottom: 48px !important; }
   .u-mrh-xl\@xl {
@@ -3910,7 +3908,7 @@ table {
     margin-bottom: 64px !important; }
   .u-mrl-xxl\@xl {
     margin-left: 64px !important; }
-  .u-margin-vertical-xxl\@xl {
+  .u-mrv-xxl\@xl {
     margin-top: 64px !important;
     margin-bottom: 64px !important; }
   .u-mrh-xxl\@xl {
@@ -3929,7 +3927,7 @@ table {
     margin-bottom: 80px !important; }
   .u-mrl-xxxl\@xl {
     margin-left: 80px !important; }
-  .u-margin-vertical-xxxl\@xl {
+  .u-mrv-xxxl\@xl {
     margin-top: 80px !important;
     margin-bottom: 80px !important; }
   .u-mrh-xxxl\@xl {
@@ -3948,7 +3946,7 @@ table {
     margin-bottom: 96px !important; }
   .u-mrl-h\@xl {
     margin-left: 96px !important; }
-  .u-margin-vertical-h\@xl {
+  .u-mrv-h\@xl {
     margin-top: 96px !important;
     margin-bottom: 96px !important; }
   .u-mrh-h\@xl {
@@ -4475,7 +4473,7 @@ table {
     margin-bottom: 0 !important; }
   .u-mrl-none\@xxl {
     margin-left: 0 !important; }
-  .u-margin-vertical-none\@xxl {
+  .u-mrv-none\@xxl {
     margin-top: 0 !important;
     margin-bottom: 0 !important; }
   .u-mrh-none\@xxl {
@@ -4494,7 +4492,7 @@ table {
     margin-bottom: 8px !important; }
   .u-mrl-xs\@xxl {
     margin-left: 8px !important; }
-  .u-margin-vertical-xs\@xxl {
+  .u-mrv-xs\@xxl {
     margin-top: 8px !important;
     margin-bottom: 8px !important; }
   .u-mrh-xs\@xxl {
@@ -4513,7 +4511,7 @@ table {
     margin-bottom: 16px !important; }
   .u-mrl-s\@xxl {
     margin-left: 16px !important; }
-  .u-margin-vertical-s\@xxl {
+  .u-mrv-s\@xxl {
     margin-top: 16px !important;
     margin-bottom: 16px !important; }
   .u-mrh-s\@xxl {
@@ -4532,7 +4530,7 @@ table {
     margin-bottom: 24px !important; }
   .u-mrl-m\@xxl {
     margin-left: 24px !important; }
-  .u-margin-vertical-m\@xxl {
+  .u-mrv-m\@xxl {
     margin-top: 24px !important;
     margin-bottom: 24px !important; }
   .u-mrh-m\@xxl {
@@ -4551,7 +4549,7 @@ table {
     margin-bottom: 32px !important; }
   .u-mrl-l\@xxl {
     margin-left: 32px !important; }
-  .u-margin-vertical-l\@xxl {
+  .u-mrv-l\@xxl {
     margin-top: 32px !important;
     margin-bottom: 32px !important; }
   .u-mrh-l\@xxl {
@@ -4570,7 +4568,7 @@ table {
     margin-bottom: 48px !important; }
   .u-mrl-xl\@xxl {
     margin-left: 48px !important; }
-  .u-margin-vertical-xl\@xxl {
+  .u-mrv-xl\@xxl {
     margin-top: 48px !important;
     margin-bottom: 48px !important; }
   .u-mrh-xl\@xxl {
@@ -4589,7 +4587,7 @@ table {
     margin-bottom: 64px !important; }
   .u-mrl-xxl\@xxl {
     margin-left: 64px !important; }
-  .u-margin-vertical-xxl\@xxl {
+  .u-mrv-xxl\@xxl {
     margin-top: 64px !important;
     margin-bottom: 64px !important; }
   .u-mrh-xxl\@xxl {
@@ -4608,7 +4606,7 @@ table {
     margin-bottom: 80px !important; }
   .u-mrl-xxxl\@xxl {
     margin-left: 80px !important; }
-  .u-margin-vertical-xxxl\@xxl {
+  .u-mrv-xxxl\@xxl {
     margin-top: 80px !important;
     margin-bottom: 80px !important; }
   .u-mrh-xxxl\@xxl {
@@ -4627,7 +4625,7 @@ table {
     margin-bottom: 96px !important; }
   .u-mrl-h\@xxl {
     margin-left: 96px !important; }
-  .u-margin-vertical-h\@xxl {
+  .u-mrv-h\@xxl {
     margin-top: 96px !important;
     margin-bottom: 96px !important; }
   .u-mrh-h\@xxl {
