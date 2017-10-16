@@ -1,0 +1,27 @@
+/* -----------------------------------------------------------------------------
+ * GRID-CARDS
+ */
+
+
+// Variables
+// -----------------------------------------------------------------------------
+
+$o-grid-cards-max-width: $f-wrapper-l;
+$o-grid-cards-padding-horizontal: $f-space-s;
+$o-grid-cards-grid-gap: $f-space-m;
+$o-grid-cards-column-min: 280px;
+
+
+// Output
+// -----------------------------------------------------------------------------
+
+.o-grid-cards {
+  max-width: $o-grid-cards-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $o-grid-cards-padding-horizontal;
+  padding-right: $o-grid-cards-padding-horizontal;
+  display: grid;
+  grid-gap: $o-grid-cards-grid-gap;
+  grid-template-columns: repeat(auto-fit, minmax($o-grid-cards-column-min, 1fr));
+}

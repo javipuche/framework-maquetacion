@@ -4,7 +4,8 @@
 // Import/require libraries
 // -----------------------------------------------------------------------------
 
-import $ from 'jquery';
+import jQuery from 'jquery';
+window.$ = window.jQuery = jQuery;
 
 
 // Functions
@@ -25,10 +26,18 @@ app.commons = app.commons || {};
 app.commons.init = (function () {
     var init = function () {
 
-        // Example
+        // Toggle Class with data attributes
 
-        this.example = function() {
-            console.log(example());
+        this._toggleClass = function() {
+            $('.js-toggle-class').each(function () {
+                let _this = $(this);
+                $(this).click( function (event) {
+                    event.preventDefault();
+                    let _target = $(_this).data('target');
+                    let _class = $(_this).data('class');
+                    $(_target).toggleClass(_class);
+                });
+            });
         };
 
     };
@@ -40,5 +49,5 @@ app.commons.init = (function () {
 // -----------------------------------------------------------------------------
 
 $(document).ready(function() {
-    app.commons.init.example();
+    app.commons.init._toggleClass();
 });

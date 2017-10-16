@@ -1,0 +1,143 @@
+/* -----------------------------------------------------------------------------
+ * HEADER
+ */
+
+
+// Variables
+// -----------------------------------------------------------------------------
+
+$c-header-background-color: #eee;
+$c-header-max-width: $f-wrapper-l;
+$c-header-padding-horizontal: $f-space-s;
+$c-header-min-height: null;
+$c-header__logo-padding-vertical: $f-space-xs;
+$c-header__nav-background-color: #ddd;
+$c-header__button-size: $f-space-l;
+$c-header__item-margin-left: $f-space-l;
+
+
+// Output
+// -----------------------------------------------------------------------------
+
+.c-header {
+  background-color: $c-header-background-color;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $c-header-padding-horizontal;
+    padding-left: $c-header-padding-horizontal;
+    max-width: $c-header-max-width;
+
+    @if $c-header-min-height {
+      min-height: $c-header-min-height;
+    }
+  }
+
+  &__logo {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    margin-right: auto;
+    padding-top: $c-header__logo-padding-vertical;
+    padding-bottom: $c-header__logo-padding-vertical;
+  }
+
+  &__media {
+    display: block;
+  }
+
+  &__nav {
+    display: flex;
+
+    @include breakpoint(l down) {
+      overflow-y: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background-color: $c-header__nav-background-color;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.5);
+      transition: opacity .5s, transform .5s;
+    }
+
+    @include breakpoint(l) {
+      align-self: stretch;
+    }
+
+    &.is-active {
+      @include breakpoint(l down) {
+        pointer-events: auto;
+        transform: scale(1);
+        opacity: 1;
+        transition: opacity .5s, transform .5s;
+      }
+    }
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    align-self: stretch;
+
+    @include breakpoint(l down) {
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      max-width: $c-header-max-width;
+    }
+  }
+
+  &__item {
+    @include breakpoint(l down) {
+      text-align: center;
+    }
+
+    @include breakpoint(l) {
+      display: flex;
+      align-items: stretch;
+
+      &:not(:first-child) {
+        margin-left: $c-header__item-margin-left;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    @include breakpoint(l) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: $c-header-padding-horizontal;
+    right: $c-header-padding-horizontal;
+
+    @include breakpoint(l) {
+      display: none;
+    }
+  }
+
+  &__button {
+    @include reset-button;
+    width: $c-header__button-size;
+    height: $c-header__button-size;
+    cursor: pointer;
+
+    @include breakpoint(l) {
+      display: none;
+    }
+  }
+}
