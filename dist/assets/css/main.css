@@ -586,15 +586,11 @@ table {
     list-style: none;
     margin-bottom: 0;
     margin-left: 0;
-    padding-left: 0;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-item-align: stretch;
-        align-self: stretch; }
+    padding-left: 0; }
   .c-header__link {
     text-decoration: none; }
   .c-header__close {
-    position: absolute;
+    position: fixed;
     top: 16px;
     right: 16px; }
   .c-header__button {
@@ -610,7 +606,8 @@ table {
     -moz-appearance: none;
     width: 32px;
     height: 32px;
-    cursor: pointer; }
+    cursor: pointer;
+    margin-left: 16px; }
 
 /* -----------------------------------------------------------------------------
  * OVERRIDES
@@ -3104,6 +3101,11 @@ table {
     -ms-flex-item-align: stretch;
     -ms-grid-row-align: stretch;
     align-self: stretch; }
+  .c-header__list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: stretch;
+    align-self: stretch; }
   .c-header__item {
     display: -ms-flexbox;
     display: flex;
@@ -4999,7 +5001,6 @@ table {
 
 @media screen and (max-width: 63.9375em) {
   .c-header__nav {
-    overflow-y: auto;
     position: fixed;
     top: 0;
     left: 0;
@@ -5012,8 +5013,8 @@ table {
     background-color: #ddd;
     opacity: 0;
     pointer-events: none;
-    -ms-transform: scale(0.5);
-    transform: scale(0.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
     transition: opacity .5s, transform .5s; }
   .c-header__nav.is-active {
     pointer-events: auto;
@@ -5022,13 +5023,13 @@ table {
     opacity: 1;
     transition: opacity .5s, transform .5s; }
   .c-header__list {
+    overflow-y: auto;
     position: relative;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-pack: center;
-    justify-content: center;
     width: 100%;
-    max-width: 1200px; }
+    max-height: 100%;
+    max-width: 1200px;
+    padding-top: 32px;
+    padding-bottom: 32px; }
   .c-header__item {
     text-align: center; } }
 
