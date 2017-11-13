@@ -520,6 +520,62 @@ table {
   padding: 8px 24px; }
 
 /* -----------------------------------------------------------------------------
+ * CHECKBOX
+ */
+:root {
+  --color: red; }
+
+.c-checkbox {
+  position: relative; }
+  .c-checkbox__label {
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+    color: #C0CCDA;
+    padding-left: 24px;
+    display: block;
+    color: var(--color); }
+    .c-checkbox__label--small {
+      --color: green; }
+    .c-checkbox__label::before {
+      content: "";
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      border: 1px solid #E5E9F2;
+      border-radius: 2px;
+      pointer-events: none;
+      position: absolute;
+      top: 4px;
+      left: 0; }
+    .c-checkbox__label a {
+      color: #C0CCDA; }
+  .c-checkbox__element {
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: 0;
+    font-size: 1px;
+    line-height: 1px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    background: none;
+    top: 10px;
+    left: 6px;
+    outline: none;
+    box-shadow: initial; }
+    .c-checkbox__element:focus + .c-checkbox__label::before {
+      border-color: #C0CCDA; }
+    .c-checkbox__element:checked + .c-checkbox__label::after {
+      pointer-events: none;
+      position: absolute;
+      top: -1px;
+      left: 3px;
+      content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13">\a           <polyline fill="none" stroke="%233EB5AC" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="16 0 5 11 0 6" transform="translate(1 1)"/>\a         </svg>'); }
+
+/* -----------------------------------------------------------------------------
  * HEADINGS
  */
 .c-h1,
