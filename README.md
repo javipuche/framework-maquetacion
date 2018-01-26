@@ -1,14 +1,12 @@
 # Framework maquetación
 
-Base para crear un framework a medida del proyecto. Se recomienda usarlo solo para proyectos grandes y que tengan prevista una escalabilidad bastante grande.
+Base para crear un framework a medida del proyecto. Se recomienda usarlo sólo para proyectos medianos/grandes y que tengan prevista una escalabilidad a lo largo del tiempo.
 
 ## Instalación
 
-Antes de poder instalar lo necesario para el proyecto, es obligatorio realizar los siguientes requisitos.
+Antes de poder instalar lo necesario para el proyecto, es obligatorio realizar los siguientes requisitos.  
 
 ### Requisitos
-
-Para poder usar la maqueta tienes que tener instalados en el ordenador:
 
 - Node
 - Gulp (Versión 4)
