@@ -5,22 +5,6 @@
 
 // Headigns variables
 
-$e-headings-font-weight: 700 !default;
-
-$e-headings-font-size-h1: $f-font-size-h !default;
-$e-headings-font-size-h2: $f-font-size-xxxl !default;
-$e-headings-font-size-h3: $f-font-size-xxl !default;
-$e-headings-font-size-h4: $f-font-size-xl !default;
-$e-headings-font-size-h5: $f-font-size-l !default;
-$e-headings-font-size-h6: $f-font-size-m !default;
-
-$e-headings-line-height-h1: $f-line-height-h !default;
-$e-headings-line-height-h2: $f-line-height-xxxl !default;
-$e-headings-line-height-h3: $f-line-height-xxl !default;
-$e-headings-line-height-h4: $f-line-height-xl !default;
-$e-headings-line-height-h5: $f-line-height-l !default;
-$e-headings-line-height-h6: $f-line-height-m !default;
-
 $e-headings-margin-bottom: $g-reset-spacing-vertical !default;
 
 // Headigns ouput
@@ -31,36 +15,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $e-headings-font-weight;
   margin-bottom: $e-headings-margin-bottom;
-}
-
-h1 {
-  font-size: $e-headings-font-size-h1;
-  line-height: $e-headings-line-height-h1;
-}
-
-h2 {
-  font-size: $e-headings-font-size-h2;
-  line-height: $e-headings-line-height-h2;
-}
-
-h3 {
-  font-size: $e-headings-font-size-h3;
-  line-height: $e-headings-line-height-h3;
-}
-
-h4 {
-  font-size: $e-headings-font-size-h4;
-  line-height: $e-headings-line-height-h4;
-}
-
-h5 {
-  font-size: $e-headings-font-size-h5;
-  line-height: $e-headings-line-height-h5;
-}
-
-h6 {
-  font-size: $e-headings-font-size-h6;
-  line-height: $e-headings-line-height-h6;
 }
