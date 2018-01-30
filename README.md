@@ -121,16 +121,16 @@ Para el html usa un sistema de templates llamado Panini de ZURB, creadores de Fo
 
 ### Estructura de archivos
 
-**Settings**: Funciones y variables de configuración.
-**Foundations**: Variables del proyectos.
-**Tools**: Mixins de sass.
-**Vendor**: SCSS/CSS de terceros y/o los estilos para sobreescribir a estos.
-**Generic**: Estilos genéricos como las fuentes, resets, etc.
-**Elements**: Estilos de los elementos html, las etiquetas en si. Ej: ```h1, p, a {...}```.
-**Animations**: Animaciones CSS reutilizables.
-**Objects**: Estilos abstractos que se podrían reutilizar en diferentes proyectos. Ej: ```.o-table {...}```.
-**Componentes**: Estilos específicos de los componentes del proyecto. Ej: ```.c-btn {...}```.
-**Scopes**: Estilos para elementos generados dinámicamente como un post de un blog. Ej: ```.s-cms {...}```.
+**Settings**: Funciones y variables de configuración. <br>
+**Foundations**: Variables del proyectos.<br>
+**Tools**: Mixins de sass.<br>
+**Vendor**: SCSS/CSS de terceros y/o los estilos para sobreescribir a estos.<br>
+**Generic**: Estilos genéricos como las fuentes, resets, etc.<br>
+**Elements**: Estilos de los elementos html, las etiquetas en si. Ej: ```h1, p, a {...}```.<br>
+**Animations**: Animaciones CSS reutilizables.<br>
+**Objects**: Estilos abstractos que se podrían reutilizar en diferentes proyectos. Ej: ```.o-table {...}```.<br>
+**Componentes**: Estilos específicos de los componentes del proyecto. Ej: ```.c-btn {...}```.<br>
+**Scopes**: Estilos para elementos generados dinámicamente como un post de un blog. Ej: ```.s-cms {...}```.<br>
 **Utilities**: Clases de ayuda. Ej: ```.u-align-center```.
 
 ### Nomenclatura
@@ -184,8 +184,8 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ------------------- | ------------------------ | --------------------- |
 | ```.u-[fraction]``` | ```width: [fraction];``` | Ejemplo: ```.u-1/5``` |
 
-**Enable**: true
-**Responsive**: true
+**Enable**: true <br>
+**Responsive**: true <br>
 **Default Fractions**: 1 2 3 4 5
 
 ##### Alignments
@@ -196,7 +196,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ```.u-align-center``` | ```text-align: center;``` | -               |
 | ```.u-align-right```  | ```text-align: right;```  | -               |
 
-**Enable**: true
+**Enable**: true <br>
 **Responsive**: true
 
 ##### Colors
@@ -206,7 +206,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ```.u-color-[color-name]```    | ```color: [color-value];```            | Ejemplo: ```.u-color-primary```    |
 | ```.u-bg-color-[color-name]``` | ```background-color: [color-value];``` | Ejemplo: ```.u-bg-color-primary``` |
 
-**Enable**: true
+**Enable**: true <br>
 **Responsive**: null
 
 ##### Borders
@@ -220,7 +220,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ```.u-border-left-[color-name]```   | ```border-left: 1px solid [color-value];```   | Ejemplo: ```.u-border-left-color-primary```   |
 | ```.u-border-color-[color-name]```  | ```border-color: [color-value];```            | Ejemplo: ```.u-border-color-primary```        |
 
-**Enable**: true
+**Enable**: true <br>
 **Responsive**: null
 
 ##### Display
@@ -231,7 +231,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ```.u-display-block```        | ```display: block;```        | -               |
 | ```.u-display-inline-block``` | ```display: inline-block;``` | -               |
 
-**Enable**: true
+**Enable**: true <br>
 **Responsive**: true
 
 ##### Flex
@@ -264,7 +264,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ```.u-flex-first```          | ```order: -1;```                      | -                                              |
 | ```.u-flex-last```           | ```order: 999;```                     | -                                              |
 
-**Enable**: true
+**Enable**: true <br>
 **Responsive**: true
 
 ##### Font Families
@@ -273,7 +273,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | --------------------------- | -------------------------- | ------------------------------------- |
 | ```.u-font-family-[name]``` | ```font-family: [name];``` | Ejemplo: ```.u-font-family-primary``` |
 
-**Enable**: false
+**Enable**: false <br>
 **Responsive**: null
 
 ##### Font Sizes
@@ -282,7 +282,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ------------------------- | ------------------------ | ------------------------------ |
 | ```.u-font-size-[size]``` | ```font-size: [size];``` | Ejemplo: ```.u-font-size-xl``` |
 
-**Enable**: false
+**Enable**: false <br>
 **Responsive**: null
 
 ##### Font Weight
@@ -291,7 +291,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ----------------------------- | ---------------------------- | --------------------------------- |
 | ```.u-font-weight-[weight]``` | ```font-weight: [weight];``` | Ejemplo: ```.u-font-weight-700``` |
 
-**Enable**: true
+**Enable**: true <br>
 **Responsive**: null
 
 ##### Line Height
@@ -300,7 +300,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | --------------------------- | -------------------------- | -------------------------------- |
 | ```.u-line-height-[size]``` | ```line-height: [size];``` | Ejemplo: ```.u-line-height-xl``` |
 
-**Enable**: false
+**Enable**: false <br>
 **Responsive**: null
 
 ##### Margins
@@ -315,7 +315,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ```.u-mrv-[size]``` | ```margin-top: [size];``` ```margin-bottom: [size];``` | Ejemplo: ```.u-mrv-xl``` |
 | ```.u-mrh-[size]``` | ```margin-left: [size];``` ```margin-right: [size];``` | Ejemplo: ```.u-mrh-xl``` |
 
-**Enable**: true
+**Enable**: true <br>
 **Responsive**: true
 
 ##### Paddings
@@ -330,7 +330,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ```.u-pdv-[size]``` | ```padding-top: [size];``` ```padding-bottom: [size];``` | Ejemplo: ```.u-pdv-xl``` |
 | ```.u-pdh-[size]``` | ```padding-left: [size];``` ```padding-right: [size];``` | Ejemplo: ```.u-pdh-xl``` |
 
-**Enable**: true
+**Enable**: true <br>
 **Responsive**: true
 
 ##### Radiuses
@@ -339,7 +339,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ---------------------- | ---------------------------- | ------------------------------- |
 | ```.u-radius-[name]``` | ```border-radius: [name];``` | Ejemplo: ```.u-radius-circle``` |
 
-**Enable**: false
+**Enable**: false <br>
 **Responsive**: null
 
 ##### Shadows
@@ -348,7 +348,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ---------------------- | ------------------------- | -------------------------------- |
 | ```.u-shadow-[name]``` | ```box-shadow: [name];``` | Ejemplo: ```.u-shadow-distant``` |
 
-**Enable**: false
+**Enable**: false <br>
 **Responsive**: null
 
 ##### Text Transforms
@@ -359,7 +359,7 @@ Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos don
 | ```.u-uppercase```  | ```text-transform: uppercase;```  | -               |
 | ```.u-capitalize``` | ```text-transform: capitalize;``` | -               |
 
-**Enable**: true
+**Enable**: true <br>
 **Responsive**: null
 
 ## Referencias
