@@ -81,7 +81,7 @@ $o-ratios-breakpoints: $f-mq-breakpoints !default;
     &__content {
       @include o-ratio-content();
 
-      &--img {
+      &--media {
         object-fit: cover;
       }
     }

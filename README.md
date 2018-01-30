@@ -5,7 +5,7 @@ Base para crear un framework a medida del proyecto. Se recomienda usarlo sólo p
 ## Características
 
 - Sistema de Templates para el HTML.
-- Sistema de Arquitectura CSS.
+- Sistema de Arquitectura CSS Mobile First.
 - Babel para el JS.
 - Optimización automática de imágenes.
 - Minificado del CSS y JS.
@@ -54,7 +54,7 @@ Una vez eliminado, podemos proceder a instalar Gulp 4 mediante los siguientes co
 npm install -g gulp-cli
 ```
 ```bash
-npm install gulpjs/gulp.git#4.0
+npm install gulp@next
 ```
 
 ##### Posibles errores
@@ -161,9 +161,9 @@ El proyecto usa un sistema de prefijos en las clases para poder saber que es ese
 Todo lo anterior explicado se va a usar conjuntamente con la nomenclatura BEM (Bloque, Elemento, Modificador).
 
 ```css
-.c-persona {} /* Seria el bloque */
-.c-persona__mano {} /* Seria el elemento */
-.c-persona__mano--derecha {} /* Seria el modificador */
+.c-persona {...} /* Seria el bloque */
+.c-persona__mano {...} /* Seria el elemento */
+.c-persona__mano--derecha {...} /* Seria el modificador */
 ```
 
 Con este simple ejemplo queda claro que el bloque es la clase en si. El elemento se escribe con doble guión bajo ```__``` y el modificador se escribe con doble guión medio ```--```.
@@ -174,7 +174,71 @@ OOCSS es una metodología basada en objetos CSS. Resumiéndodolo mucho se trata 
 
 ### Clases
 
-#### Clases de Utilidad
+#### Objects
+
+##### Wrappers
+
+Son los containers del framework. Puedes editarlos en su correspondiente archivo en foundations.
+
+| __Nombre__               | __¿Qué hace?__                          |
+| ------------------------ | --------------------------------------- |
+| ```.o-wrapper```         | Engloba el contenido y reparte el resto |
+| ```.o-wrapper--[size]``` | Le añade un ancho máximo                |
+
+**Enable**: true <br>
+**Responsive**: true <br>
+
+```html
+<div class="o-wrapper o-wrapper--m o-wrapper--xl@xl">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, nisi.</p>
+</div>
+```
+
+##### Ratios
+
+| __Nombre__                     | __¿Qué hace?__                      |
+| ------------------------------ | ----------------------------------- |
+| ```.o-ratio```                 | Envoltorio del item                 |
+| ```.o-ratio--[aspect-ratio]``` | Aspect ratio deseado                |
+| ```.o-ratio__content```        | Item al que aplicar el aspect ratio |
+| ```.o-ratio__content--media``` | Le añade ```object-fit: cover;```   |
+
+**Enable**: true <br>
+**Responsive**: true <br>
+
+```html
+<picture class="o-ratio o-ratio--4:3 o-ratio--16:9@m">
+    <img class="o-ratio__content o-ratio__content--media" src="example.jpg">
+</picture>
+```
+
+##### Layout
+
+El el sistema de rejilla del framework. Se usa conjuntamente con las *utilities width classes*.
+
+| __Nombre__                            | __¿Qué hace?__                                    |
+| ------------------------------------- | ------------------------------------------------- |
+| ```.o-layout```                       | Envoltorio de la rejilla                          |
+| ```.o-layout--gutter-[size]```        | Añade espacio entre los elementos                 |
+| ```.o-layout--gutter-left-[size]```   | Añade espacio verticalmente entre los elementos   |
+| ```.o-layout--gutter-bottom-[size]``` | Añade espacio horizontalmente entre los elementos |
+| ```.o-layout__item```                 | Elemento en la rejilla                            |
+
+**Enable**: true <br>
+**Responsive**: true <br>
+
+```html
+<div class="o-layout o-layout--gutter-m o-layout--gutter-l@xl">
+  <div class="o-layout__item u-1/2 u-2/4@m">Lorem ipsum dolor sit amet.</div>
+  <div class="o-layout__item u-1/2 u-2/4@m">Lorem ipsum dolor sit amet.</div>
+  <div class="o-layout__item u-1/2 u-2/4@m">Lorem ipsum dolor sit amet.</div>
+  <div class="o-layout__item u-1/2 u-2/4@m">Lorem ipsum dolor sit amet.</div>
+</div>
+```
+
+**Nota**: No se puede usar conjuntamente con ```.o-wrapper```. Este siempre tendrá que ser un elemento padre del ```.o-layout```.
+
+#### Utilities
 
 Las clases de utilidad tienen la finalidad de ayudarte en momentos concretos donde no es necesario crear un componente pero necesitas colocar/modificar/etc algún componente. Es importante usarlas con moderación.
 

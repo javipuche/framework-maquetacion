@@ -219,6 +219,9 @@ table {
  * ABSTRACTIONS
  */
 /* -----------------------------------------------------------------------------
+ * ANIMATIONS
+ */
+/* -----------------------------------------------------------------------------
  * OBJECTS
  */
 /* -----------------------------------------------------------------------------
@@ -452,7 +455,7 @@ table {
     left: 0;
     height: 100%;
     width: 100%; }
-    .o-ratio__content--img {
+    .o-ratio__content--media {
       object-fit: cover; }
 
 .o-ratio--1\:1::before {
@@ -470,9 +473,6 @@ table {
 .o-ratio--16\:9::before {
   padding-top: 56.25%; }
 
-/* -----------------------------------------------------------------------------
- * ANIMATIONS
- */
 /* -----------------------------------------------------------------------------
  * CONTENT
  */
@@ -540,24 +540,25 @@ table {
   line-height: 24px; }
 
 /* -----------------------------------------------------------------------------
+ * SCOPES
+ */
+/* -----------------------------------------------------------------------------
  * OVERRIDES
  */
 /* -----------------------------------------------------------------------------
  * UTILITIES
  */
 /* -----------------------------------------------------------------------------
- * HIDDEN
+ * DISPLAY
  */
-.u-hidden {
+.u-display-none {
   display: none !important; }
 
-/* -----------------------------------------------------------------------------
- * VISIBLE
- */
-.u-visible {
+.u-display-block {
   display: block !important; }
-  .u-visible-inline {
-    display: inline-block !important; }
+
+.u-display-inline-block {
+  display: inline-block !important; }
 
 /* -----------------------------------------------------------------------------
  * FLEX
@@ -573,30 +574,6 @@ table {
 .u-flex-wrap {
   -ms-flex-wrap: wrap !important;
       flex-wrap: wrap !important; }
-
-.u-flex-wrap-reverse {
-  -ms-flex-wrap: wrap-reverse !important;
-      flex-wrap: wrap-reverse !important; }
-
-.u-flex-nowrap {
-  -ms-flex-wrap: nowrap !important;
-      flex-wrap: nowrap !important; }
-
-.u-flex-column {
-  -ms-flex-direction: column !important;
-      flex-direction: column !important; }
-
-.u-flex-column-reverse {
-  -ms-flex-direction: column-reverse !important;
-      flex-direction: column-reverse !important; }
-
-.u-flex-row {
-  -ms-flex-direction: row !important;
-      flex-direction: row !important; }
-
-.u-flex-row-reverse {
-  -ms-flex-direction: row-reverse !important;
-      flex-direction: row-reverse !important; }
 
 .u-flex-left {
   -ms-flex-pack: start !important;
@@ -614,10 +591,6 @@ table {
   -ms-flex-pack: justify !important;
       justify-content: space-between !important; }
 
-.u-flex-around {
-  -ms-flex-pack: distribute !important;
-      justify-content: space-around !important; }
-
 .u-flex-top {
   -ms-flex-align: start !important;
       align-items: flex-start !important; }
@@ -630,10 +603,6 @@ table {
   -ms-flex-align: end !important;
       align-items: flex-end !important; }
 
-.u-flex-baseline {
-  -ms-flex-align: baseline !important;
-      align-items: baseline !important; }
-
 .u-flex-self-start {
   -ms-flex-item-align: start !important;
       align-self: flex-start !important; }
@@ -641,11 +610,6 @@ table {
 .u-flex-self-end {
   -ms-flex-item-align: end !important;
       align-self: flex-end !important; }
-
-.u-flex-self-stretch {
-  -ms-flex-item-align: stretch !important;
-      -ms-grid-row-align: stretch !important;
-      align-self: stretch !important; }
 
 .u-flex-self-center {
   -ms-flex-item-align: center !important;
@@ -659,6 +623,10 @@ table {
 .u-flex-first {
   -ms-flex-order: -1 !important;
       order: -1 !important; }
+
+.u-flex-last {
+  -ms-flex-order: 999 !important;
+      order: 999 !important; }
 
 /* -----------------------------------------------------------------------------
  * ALIGNMENTS
@@ -675,42 +643,9 @@ table {
 /* -----------------------------------------------------------------------------
  * FONT
  */
-.u-font-size-xxs {
-  font-size: 10px !important; }
-
-.u-font-size-xs {
-  font-size: 12px !important; }
-
-.u-font-size-s {
-  font-size: 14px !important; }
-
-.u-font-size-m {
-  font-size: 16px !important; }
-
-.u-font-size-l {
-  font-size: 18px !important; }
-
-.u-font-size-xl {
-  font-size: 24px !important; }
-
-.u-font-size-xxl {
-  font-size: 32px !important; }
-
-.u-font-size-xxxl {
-  font-size: 40px !important; }
-
-.u-font-size-h {
-  font-size: 48px !important; }
-
 /* -----------------------------------------------------------------------------
  * FONT FAMILIES
  */
-.u-font-family-primary {
-  font-family: Arial !important; }
-
-.u-font-family-secondary {
-  font-family: Georgia !important; }
-
 /* -----------------------------------------------------------------------------
  * FONT WEIGHT
  */
@@ -738,33 +673,6 @@ table {
 /* -----------------------------------------------------------------------------
  * LINE HEIGHTS
  */
-.u-line-height-xxs {
-  line-height: 18px !important; }
-
-.u-line-height-xs {
-  line-height: 20px !important; }
-
-.u-line-height-s {
-  line-height: 22px !important; }
-
-.u-line-height-m {
-  line-height: 24px !important; }
-
-.u-line-height-l {
-  line-height: 26px !important; }
-
-.u-line-height-xl {
-  line-height: 32px !important; }
-
-.u-line-height-xxl {
-  line-height: 40px !important; }
-
-.u-line-height-xxxl {
-  line-height: 48px !important; }
-
-.u-line-height-h {
-  line-height: 56px !important; }
-
 /* -----------------------------------------------------------------------------
  * TEXT TRANSFORMS
  */
@@ -1482,32 +1390,263 @@ table {
 /* -----------------------------------------------------------------------------
  * RADIUSES
  */
-.u-radius-none {
-  border-radius: 0 !important; }
-
-.u-radius-s {
-  border-radius: 4px !important; }
-
-.u-radius-m {
-  border-radius: 8px !important; }
-
-.u-radius-l {
-  border-radius: 16px !important; }
-
-.u-radius-circle {
-  border-radius: 50% !important; }
-
 /* -----------------------------------------------------------------------------
  * SHADOWS
  */
-.u-shadow-distant {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important; }
+/* -----------------------------------------------------------------------------
+ * BORDERS
+ */
+.u-border-primary {
+  border: 1px solid #91bce7 !important; }
 
-.u-shadow-close {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15) !important; }
+.u-border-top-primary {
+  border-top: 1px solid #91bce7 !important; }
 
-.u-shadow-subtle {
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15) !important; }
+.u-border-right-primary {
+  border-right: 1px solid #91bce7 !important; }
+
+.u-border-bottom-primary {
+  border-bottom: 1px solid #91bce7 !important; }
+
+.u-border-left-primary {
+  border-left: 1px solid #91bce7 !important; }
+
+.u-border-color-primary {
+  border-color: #91bce7 !important; }
+
+.u-border-primary-light {
+  border: 1px solid #bbd6f0 !important; }
+
+.u-border-top-primary-light {
+  border-top: 1px solid #bbd6f0 !important; }
+
+.u-border-right-primary-light {
+  border-right: 1px solid #bbd6f0 !important; }
+
+.u-border-bottom-primary-light {
+  border-bottom: 1px solid #bbd6f0 !important; }
+
+.u-border-left-primary-light {
+  border-left: 1px solid #bbd6f0 !important; }
+
+.u-border-color-primary-light {
+  border-color: #bbd6f0 !important; }
+
+.u-border-primary-dark {
+  border: 1px solid #67a3de !important; }
+
+.u-border-top-primary-dark {
+  border-top: 1px solid #67a3de !important; }
+
+.u-border-right-primary-dark {
+  border-right: 1px solid #67a3de !important; }
+
+.u-border-bottom-primary-dark {
+  border-bottom: 1px solid #67a3de !important; }
+
+.u-border-left-primary-dark {
+  border-left: 1px solid #67a3de !important; }
+
+.u-border-color-primary-dark {
+  border-color: #67a3de !important; }
+
+.u-border-secondary {
+  border: 1px solid #91e4e7 !important; }
+
+.u-border-top-secondary {
+  border-top: 1px solid #91e4e7 !important; }
+
+.u-border-right-secondary {
+  border-right: 1px solid #91e4e7 !important; }
+
+.u-border-bottom-secondary {
+  border-bottom: 1px solid #91e4e7 !important; }
+
+.u-border-left-secondary {
+  border-left: 1px solid #91e4e7 !important; }
+
+.u-border-color-secondary {
+  border-color: #91e4e7 !important; }
+
+.u-border-shade-0 {
+  border: 1px solid #ffffff !important; }
+
+.u-border-top-shade-0 {
+  border-top: 1px solid #ffffff !important; }
+
+.u-border-right-shade-0 {
+  border-right: 1px solid #ffffff !important; }
+
+.u-border-bottom-shade-0 {
+  border-bottom: 1px solid #ffffff !important; }
+
+.u-border-left-shade-0 {
+  border-left: 1px solid #ffffff !important; }
+
+.u-border-color-shade-0 {
+  border-color: #ffffff !important; }
+
+.u-border-shade-100 {
+  border: 1px solid #F8F9F9 !important; }
+
+.u-border-top-shade-100 {
+  border-top: 1px solid #F8F9F9 !important; }
+
+.u-border-right-shade-100 {
+  border-right: 1px solid #F8F9F9 !important; }
+
+.u-border-bottom-shade-100 {
+  border-bottom: 1px solid #F8F9F9 !important; }
+
+.u-border-left-shade-100 {
+  border-left: 1px solid #F8F9F9 !important; }
+
+.u-border-color-shade-100 {
+  border-color: #F8F9F9 !important; }
+
+.u-border-shade-200 {
+  border: 1px solid #EDEFF0 !important; }
+
+.u-border-top-shade-200 {
+  border-top: 1px solid #EDEFF0 !important; }
+
+.u-border-right-shade-200 {
+  border-right: 1px solid #EDEFF0 !important; }
+
+.u-border-bottom-shade-200 {
+  border-bottom: 1px solid #EDEFF0 !important; }
+
+.u-border-left-shade-200 {
+  border-left: 1px solid #EDEFF0 !important; }
+
+.u-border-color-shade-200 {
+  border-color: #EDEFF0 !important; }
+
+.u-border-shade-300 {
+  border: 1px solid #E2E4E6 !important; }
+
+.u-border-top-shade-300 {
+  border-top: 1px solid #E2E4E6 !important; }
+
+.u-border-right-shade-300 {
+  border-right: 1px solid #E2E4E6 !important; }
+
+.u-border-bottom-shade-300 {
+  border-bottom: 1px solid #E2E4E6 !important; }
+
+.u-border-left-shade-300 {
+  border-left: 1px solid #E2E4E6 !important; }
+
+.u-border-color-shade-300 {
+  border-color: #E2E4E6 !important; }
+
+.u-border-shade-400 {
+  border: 1px solid #D6DADC !important; }
+
+.u-border-top-shade-400 {
+  border-top: 1px solid #D6DADC !important; }
+
+.u-border-right-shade-400 {
+  border-right: 1px solid #D6DADC !important; }
+
+.u-border-bottom-shade-400 {
+  border-bottom: 1px solid #D6DADC !important; }
+
+.u-border-left-shade-400 {
+  border-left: 1px solid #D6DADC !important; }
+
+.u-border-color-shade-400 {
+  border-color: #D6DADC !important; }
+
+.u-border-shade-500 {
+  border: 1px solid #838C91 !important; }
+
+.u-border-top-shade-500 {
+  border-top: 1px solid #838C91 !important; }
+
+.u-border-right-shade-500 {
+  border-right: 1px solid #838C91 !important; }
+
+.u-border-bottom-shade-500 {
+  border-bottom: 1px solid #838C91 !important; }
+
+.u-border-left-shade-500 {
+  border-left: 1px solid #838C91 !important; }
+
+.u-border-color-shade-500 {
+  border-color: #838C91 !important; }
+
+.u-border-shade-600 {
+  border: 1px solid #676D70 !important; }
+
+.u-border-top-shade-600 {
+  border-top: 1px solid #676D70 !important; }
+
+.u-border-right-shade-600 {
+  border-right: 1px solid #676D70 !important; }
+
+.u-border-bottom-shade-600 {
+  border-bottom: 1px solid #676D70 !important; }
+
+.u-border-left-shade-600 {
+  border-left: 1px solid #676D70 !important; }
+
+.u-border-color-shade-600 {
+  border-color: #676D70 !important; }
+
+.u-border-shade-700 {
+  border: 1px solid #333333 !important; }
+
+.u-border-top-shade-700 {
+  border-top: 1px solid #333333 !important; }
+
+.u-border-right-shade-700 {
+  border-right: 1px solid #333333 !important; }
+
+.u-border-bottom-shade-700 {
+  border-bottom: 1px solid #333333 !important; }
+
+.u-border-left-shade-700 {
+  border-left: 1px solid #333333 !important; }
+
+.u-border-color-shade-700 {
+  border-color: #333333 !important; }
+
+.u-border-shade-800 {
+  border: 1px solid #222222 !important; }
+
+.u-border-top-shade-800 {
+  border-top: 1px solid #222222 !important; }
+
+.u-border-right-shade-800 {
+  border-right: 1px solid #222222 !important; }
+
+.u-border-bottom-shade-800 {
+  border-bottom: 1px solid #222222 !important; }
+
+.u-border-left-shade-800 {
+  border-left: 1px solid #222222 !important; }
+
+.u-border-color-shade-800 {
+  border-color: #222222 !important; }
+
+.u-border-shade-900 {
+  border: 1px solid #000000 !important; }
+
+.u-border-top-shade-900 {
+  border-top: 1px solid #000000 !important; }
+
+.u-border-right-shade-900 {
+  border-right: 1px solid #000000 !important; }
+
+.u-border-bottom-shade-900 {
+  border-bottom: 1px solid #000000 !important; }
+
+.u-border-left-shade-900 {
+  border-left: 1px solid #000000 !important; }
+
+.u-border-color-shade-900 {
+  border-color: #000000 !important; }
 
 @media screen and (min-width: 34em) {
   .o-wrapper\@s {
@@ -1669,11 +1808,11 @@ table {
     padding-top: 75%; }
   .o-ratio--16\:9\@s::before {
     padding-top: 56.25%; }
-  .u-hidden\@s {
+  .u-display-none\@s {
     display: none !important; }
-  .u-visible\@s {
+  .u-display-block\@s {
     display: block !important; }
-  .u-visible-inline\@s {
+  .u-display-inline-block\@s {
     display: inline-block !important; }
   .u-flex\@s {
     display: -ms-flexbox !important;
@@ -1684,24 +1823,6 @@ table {
   .u-flex-wrap\@s {
     -ms-flex-wrap: wrap !important;
     flex-wrap: wrap !important; }
-  .u-flex-wrap-reverse\@s {
-    -ms-flex-wrap: wrap-reverse !important;
-    flex-wrap: wrap-reverse !important; }
-  .u-flex-nowrap\@s {
-    -ms-flex-wrap: nowrap !important;
-    flex-wrap: nowrap !important; }
-  .u-flex-column\@s {
-    -ms-flex-direction: column !important;
-    flex-direction: column !important; }
-  .u-flex-column-reverse\@s {
-    -ms-flex-direction: column-reverse !important;
-    flex-direction: column-reverse !important; }
-  .u-flex-row\@s {
-    -ms-flex-direction: row !important;
-    flex-direction: row !important; }
-  .u-flex-row-reverse\@s {
-    -ms-flex-direction: row-reverse !important;
-    flex-direction: row-reverse !important; }
   .u-flex-left\@s {
     -ms-flex-pack: start !important;
     justify-content: flex-start !important; }
@@ -1714,9 +1835,6 @@ table {
   .u-flex-between\@s {
     -ms-flex-pack: justify !important;
     justify-content: space-between !important; }
-  .u-flex-around\@s {
-    -ms-flex-pack: distribute !important;
-    justify-content: space-around !important; }
   .u-flex-top\@s {
     -ms-flex-align: start !important;
     align-items: flex-start !important; }
@@ -1726,19 +1844,12 @@ table {
   .u-flex-bottom\@s {
     -ms-flex-align: end !important;
     align-items: flex-end !important; }
-  .u-flex-baseline\@s {
-    -ms-flex-align: baseline !important;
-    align-items: baseline !important; }
   .u-flex-self-start\@s {
     -ms-flex-item-align: start !important;
     align-self: flex-start !important; }
   .u-flex-self-end\@s {
     -ms-flex-item-align: end !important;
     align-self: flex-end !important; }
-  .u-flex-self-stretch\@s {
-    -ms-flex-item-align: stretch !important;
-    -ms-grid-row-align: stretch !important;
-    align-self: stretch !important; }
   .u-flex-self-center\@s {
     -ms-flex-item-align: center !important;
     -ms-grid-row-align: center !important;
@@ -1749,6 +1860,9 @@ table {
   .u-flex-first\@s {
     -ms-flex-order: -1 !important;
     order: -1 !important; }
+  .u-flex-last\@s {
+    -ms-flex-order: 999 !important;
+    order: 999 !important; }
   .u-align-left\@s {
     text-align: left !important; }
   .u-align-center\@s {
@@ -2348,11 +2462,11 @@ table {
     padding-top: 75%; }
   .o-ratio--16\:9\@m::before {
     padding-top: 56.25%; }
-  .u-hidden\@m {
+  .u-display-none\@m {
     display: none !important; }
-  .u-visible\@m {
+  .u-display-block\@m {
     display: block !important; }
-  .u-visible-inline\@m {
+  .u-display-inline-block\@m {
     display: inline-block !important; }
   .u-flex\@m {
     display: -ms-flexbox !important;
@@ -2363,24 +2477,6 @@ table {
   .u-flex-wrap\@m {
     -ms-flex-wrap: wrap !important;
     flex-wrap: wrap !important; }
-  .u-flex-wrap-reverse\@m {
-    -ms-flex-wrap: wrap-reverse !important;
-    flex-wrap: wrap-reverse !important; }
-  .u-flex-nowrap\@m {
-    -ms-flex-wrap: nowrap !important;
-    flex-wrap: nowrap !important; }
-  .u-flex-column\@m {
-    -ms-flex-direction: column !important;
-    flex-direction: column !important; }
-  .u-flex-column-reverse\@m {
-    -ms-flex-direction: column-reverse !important;
-    flex-direction: column-reverse !important; }
-  .u-flex-row\@m {
-    -ms-flex-direction: row !important;
-    flex-direction: row !important; }
-  .u-flex-row-reverse\@m {
-    -ms-flex-direction: row-reverse !important;
-    flex-direction: row-reverse !important; }
   .u-flex-left\@m {
     -ms-flex-pack: start !important;
     justify-content: flex-start !important; }
@@ -2393,9 +2489,6 @@ table {
   .u-flex-between\@m {
     -ms-flex-pack: justify !important;
     justify-content: space-between !important; }
-  .u-flex-around\@m {
-    -ms-flex-pack: distribute !important;
-    justify-content: space-around !important; }
   .u-flex-top\@m {
     -ms-flex-align: start !important;
     align-items: flex-start !important; }
@@ -2405,19 +2498,12 @@ table {
   .u-flex-bottom\@m {
     -ms-flex-align: end !important;
     align-items: flex-end !important; }
-  .u-flex-baseline\@m {
-    -ms-flex-align: baseline !important;
-    align-items: baseline !important; }
   .u-flex-self-start\@m {
     -ms-flex-item-align: start !important;
     align-self: flex-start !important; }
   .u-flex-self-end\@m {
     -ms-flex-item-align: end !important;
     align-self: flex-end !important; }
-  .u-flex-self-stretch\@m {
-    -ms-flex-item-align: stretch !important;
-    -ms-grid-row-align: stretch !important;
-    align-self: stretch !important; }
   .u-flex-self-center\@m {
     -ms-flex-item-align: center !important;
     -ms-grid-row-align: center !important;
@@ -2428,6 +2514,9 @@ table {
   .u-flex-first\@m {
     -ms-flex-order: -1 !important;
     order: -1 !important; }
+  .u-flex-last\@m {
+    -ms-flex-order: 999 !important;
+    order: 999 !important; }
   .u-align-left\@m {
     text-align: left !important; }
   .u-align-center\@m {
@@ -3027,11 +3116,11 @@ table {
     padding-top: 75%; }
   .o-ratio--16\:9\@l::before {
     padding-top: 56.25%; }
-  .u-hidden\@l {
+  .u-display-none\@l {
     display: none !important; }
-  .u-visible\@l {
+  .u-display-block\@l {
     display: block !important; }
-  .u-visible-inline\@l {
+  .u-display-inline-block\@l {
     display: inline-block !important; }
   .u-flex\@l {
     display: -ms-flexbox !important;
@@ -3042,24 +3131,6 @@ table {
   .u-flex-wrap\@l {
     -ms-flex-wrap: wrap !important;
     flex-wrap: wrap !important; }
-  .u-flex-wrap-reverse\@l {
-    -ms-flex-wrap: wrap-reverse !important;
-    flex-wrap: wrap-reverse !important; }
-  .u-flex-nowrap\@l {
-    -ms-flex-wrap: nowrap !important;
-    flex-wrap: nowrap !important; }
-  .u-flex-column\@l {
-    -ms-flex-direction: column !important;
-    flex-direction: column !important; }
-  .u-flex-column-reverse\@l {
-    -ms-flex-direction: column-reverse !important;
-    flex-direction: column-reverse !important; }
-  .u-flex-row\@l {
-    -ms-flex-direction: row !important;
-    flex-direction: row !important; }
-  .u-flex-row-reverse\@l {
-    -ms-flex-direction: row-reverse !important;
-    flex-direction: row-reverse !important; }
   .u-flex-left\@l {
     -ms-flex-pack: start !important;
     justify-content: flex-start !important; }
@@ -3072,9 +3143,6 @@ table {
   .u-flex-between\@l {
     -ms-flex-pack: justify !important;
     justify-content: space-between !important; }
-  .u-flex-around\@l {
-    -ms-flex-pack: distribute !important;
-    justify-content: space-around !important; }
   .u-flex-top\@l {
     -ms-flex-align: start !important;
     align-items: flex-start !important; }
@@ -3084,19 +3152,12 @@ table {
   .u-flex-bottom\@l {
     -ms-flex-align: end !important;
     align-items: flex-end !important; }
-  .u-flex-baseline\@l {
-    -ms-flex-align: baseline !important;
-    align-items: baseline !important; }
   .u-flex-self-start\@l {
     -ms-flex-item-align: start !important;
     align-self: flex-start !important; }
   .u-flex-self-end\@l {
     -ms-flex-item-align: end !important;
     align-self: flex-end !important; }
-  .u-flex-self-stretch\@l {
-    -ms-flex-item-align: stretch !important;
-    -ms-grid-row-align: stretch !important;
-    align-self: stretch !important; }
   .u-flex-self-center\@l {
     -ms-flex-item-align: center !important;
     -ms-grid-row-align: center !important;
@@ -3107,6 +3168,9 @@ table {
   .u-flex-first\@l {
     -ms-flex-order: -1 !important;
     order: -1 !important; }
+  .u-flex-last\@l {
+    -ms-flex-order: 999 !important;
+    order: 999 !important; }
   .u-align-left\@l {
     text-align: left !important; }
   .u-align-center\@l {
@@ -3706,11 +3770,11 @@ table {
     padding-top: 75%; }
   .o-ratio--16\:9\@xl::before {
     padding-top: 56.25%; }
-  .u-hidden\@xl {
+  .u-display-none\@xl {
     display: none !important; }
-  .u-visible\@xl {
+  .u-display-block\@xl {
     display: block !important; }
-  .u-visible-inline\@xl {
+  .u-display-inline-block\@xl {
     display: inline-block !important; }
   .u-flex\@xl {
     display: -ms-flexbox !important;
@@ -3721,24 +3785,6 @@ table {
   .u-flex-wrap\@xl {
     -ms-flex-wrap: wrap !important;
     flex-wrap: wrap !important; }
-  .u-flex-wrap-reverse\@xl {
-    -ms-flex-wrap: wrap-reverse !important;
-    flex-wrap: wrap-reverse !important; }
-  .u-flex-nowrap\@xl {
-    -ms-flex-wrap: nowrap !important;
-    flex-wrap: nowrap !important; }
-  .u-flex-column\@xl {
-    -ms-flex-direction: column !important;
-    flex-direction: column !important; }
-  .u-flex-column-reverse\@xl {
-    -ms-flex-direction: column-reverse !important;
-    flex-direction: column-reverse !important; }
-  .u-flex-row\@xl {
-    -ms-flex-direction: row !important;
-    flex-direction: row !important; }
-  .u-flex-row-reverse\@xl {
-    -ms-flex-direction: row-reverse !important;
-    flex-direction: row-reverse !important; }
   .u-flex-left\@xl {
     -ms-flex-pack: start !important;
     justify-content: flex-start !important; }
@@ -3751,9 +3797,6 @@ table {
   .u-flex-between\@xl {
     -ms-flex-pack: justify !important;
     justify-content: space-between !important; }
-  .u-flex-around\@xl {
-    -ms-flex-pack: distribute !important;
-    justify-content: space-around !important; }
   .u-flex-top\@xl {
     -ms-flex-align: start !important;
     align-items: flex-start !important; }
@@ -3763,19 +3806,12 @@ table {
   .u-flex-bottom\@xl {
     -ms-flex-align: end !important;
     align-items: flex-end !important; }
-  .u-flex-baseline\@xl {
-    -ms-flex-align: baseline !important;
-    align-items: baseline !important; }
   .u-flex-self-start\@xl {
     -ms-flex-item-align: start !important;
     align-self: flex-start !important; }
   .u-flex-self-end\@xl {
     -ms-flex-item-align: end !important;
     align-self: flex-end !important; }
-  .u-flex-self-stretch\@xl {
-    -ms-flex-item-align: stretch !important;
-    -ms-grid-row-align: stretch !important;
-    align-self: stretch !important; }
   .u-flex-self-center\@xl {
     -ms-flex-item-align: center !important;
     -ms-grid-row-align: center !important;
@@ -3786,6 +3822,9 @@ table {
   .u-flex-first\@xl {
     -ms-flex-order: -1 !important;
     order: -1 !important; }
+  .u-flex-last\@xl {
+    -ms-flex-order: 999 !important;
+    order: 999 !important; }
   .u-align-left\@xl {
     text-align: left !important; }
   .u-align-center\@xl {
@@ -4385,11 +4424,11 @@ table {
     padding-top: 75%; }
   .o-ratio--16\:9\@xxl::before {
     padding-top: 56.25%; }
-  .u-hidden\@xxl {
+  .u-display-none\@xxl {
     display: none !important; }
-  .u-visible\@xxl {
+  .u-display-block\@xxl {
     display: block !important; }
-  .u-visible-inline\@xxl {
+  .u-display-inline-block\@xxl {
     display: inline-block !important; }
   .u-flex\@xxl {
     display: -ms-flexbox !important;
@@ -4400,24 +4439,6 @@ table {
   .u-flex-wrap\@xxl {
     -ms-flex-wrap: wrap !important;
     flex-wrap: wrap !important; }
-  .u-flex-wrap-reverse\@xxl {
-    -ms-flex-wrap: wrap-reverse !important;
-    flex-wrap: wrap-reverse !important; }
-  .u-flex-nowrap\@xxl {
-    -ms-flex-wrap: nowrap !important;
-    flex-wrap: nowrap !important; }
-  .u-flex-column\@xxl {
-    -ms-flex-direction: column !important;
-    flex-direction: column !important; }
-  .u-flex-column-reverse\@xxl {
-    -ms-flex-direction: column-reverse !important;
-    flex-direction: column-reverse !important; }
-  .u-flex-row\@xxl {
-    -ms-flex-direction: row !important;
-    flex-direction: row !important; }
-  .u-flex-row-reverse\@xxl {
-    -ms-flex-direction: row-reverse !important;
-    flex-direction: row-reverse !important; }
   .u-flex-left\@xxl {
     -ms-flex-pack: start !important;
     justify-content: flex-start !important; }
@@ -4430,9 +4451,6 @@ table {
   .u-flex-between\@xxl {
     -ms-flex-pack: justify !important;
     justify-content: space-between !important; }
-  .u-flex-around\@xxl {
-    -ms-flex-pack: distribute !important;
-    justify-content: space-around !important; }
   .u-flex-top\@xxl {
     -ms-flex-align: start !important;
     align-items: flex-start !important; }
@@ -4442,19 +4460,12 @@ table {
   .u-flex-bottom\@xxl {
     -ms-flex-align: end !important;
     align-items: flex-end !important; }
-  .u-flex-baseline\@xxl {
-    -ms-flex-align: baseline !important;
-    align-items: baseline !important; }
   .u-flex-self-start\@xxl {
     -ms-flex-item-align: start !important;
     align-self: flex-start !important; }
   .u-flex-self-end\@xxl {
     -ms-flex-item-align: end !important;
     align-self: flex-end !important; }
-  .u-flex-self-stretch\@xxl {
-    -ms-flex-item-align: stretch !important;
-    -ms-grid-row-align: stretch !important;
-    align-self: stretch !important; }
   .u-flex-self-center\@xxl {
     -ms-flex-item-align: center !important;
     -ms-grid-row-align: center !important;
@@ -4465,6 +4476,9 @@ table {
   .u-flex-first\@xxl {
     -ms-flex-order: -1 !important;
     order: -1 !important; }
+  .u-flex-last\@xxl {
+    -ms-flex-order: 999 !important;
+    order: 999 !important; }
   .u-align-left\@xxl {
     text-align: left !important; }
   .u-align-center\@xxl {
