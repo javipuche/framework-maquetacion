@@ -172,6 +172,97 @@ Con este simple ejemplo queda claro que el bloque es la clase en si. El elemento
 
 OOCSS es una metodología basada en objetos CSS. Resumiéndodolo mucho se trata de abstraer todo lo máximo posible para poder reaprovechar todo el código posible.
 
+### Mediaqueries
+
+Mediaqueries por defecto:
+
+```scss
+$f-mq-breakpoint-s: 544px !default;
+$f-mq-breakpoint-m: 768px !default;
+$f-mq-breakpoint-l: 1024px !default;
+$f-mq-breakpoint-xl: 1200px !default;
+$f-mq-breakpoint-xxl: 1440px !default;
+```
+
+Para usarlas es tan simple como:
+
+```scss
+// Input
+body {
+    /**
+     * Mobile first by default
+     */
+    @include breakpoint(s) {
+        background: red;
+    }
+}
+
+// Output
+
+@media screen and (min-width: 34em) {
+    body {
+        background: red;
+    }
+}
+```
+
+Para ir de escritorio a móvil hay que añadir el valor down:
+
+```scss
+// Input
+body {
+    @include breakpoint(s down) {
+        background: red;
+    }
+}
+
+// Output
+
+@media screen and (max-width: 33.9375em) {
+    body {
+        background: red;
+    }
+}
+```
+
+Para hacer rangos entre breakpoints:
+
+```scss
+// Input
+body {
+    @include breakpoint(s m) {
+        background: red;
+    }
+}
+
+// Output
+
+@media screen and (min-width: 34em) and (max-width: 47.9375em) {
+    body {
+        background: red;
+    }
+}
+```
+
+También puedes meter valores custom, tanto para mobile first, desktop first, o rangos:
+
+```scss
+// Input
+body {
+    @include breakpoint(347px 990px) {
+        background: red;
+    }
+}
+
+// Output
+
+@media screen and (min-width: 21.69em) and (max-width: 61.88em) {
+    body {
+        background: red;
+    }
+}
+```
+
 ### Clases
 
 #### Objects
