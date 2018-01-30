@@ -23,6 +23,22 @@ $u-borders-maps: $f-colors !default;
         border: 1px solid $_border-value !important;
       }
 
+      .u-border-top-#{$_border-name} {
+        border-top: 1px solid $_border-value !important;
+      }
+
+      .u-border-right-#{$_border-name} {
+        border-right: 1px solid $_border-value !important;
+      }
+
+      .u-border-bottom-#{$_border-name} {
+        border-bottom: 1px solid $_border-value !important;
+      }
+
+      .u-border-left-#{$_border-name} {
+        border-left: 1px solid $_border-value !important;
+      }
+
       .u-border-color-#{$_border-name} {
         border-color: $_border-value !important;
       }

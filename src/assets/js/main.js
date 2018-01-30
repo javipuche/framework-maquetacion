@@ -4,41 +4,26 @@
 // Import/require libraries
 // -----------------------------------------------------------------------------
 
-import $ from 'jquery';
-
-
-// Functions
-// -----------------------------------------------------------------------------
-
-// Example
-
-function example () {
-    return 'Example function Initialized';
-}
-
-
-// App
-// -----------------------------------------------------------------------------
-
-var app = app || {};
-app.commons = app.commons || {};
-app.commons.init = (function () {
-    var init = function () {
-
-        // Example
-
-        this.example = function() {
-            console.log(example());
-        };
-
-    };
-    return new init();
-})();
+import jQuery from 'jquery';
+window.$ = window.jquery = jQuery;
+//import example from './modules/example';
 
 
 // Document ready
 // -----------------------------------------------------------------------------
 
 $(document).ready(function() {
-    app.commons.init.example();
+    // var $code = $('pre code');
+    // $code.each(function() {
+    //     var html = $(this).html();
+    //
+    //     html
+    //     .replace('"', '&quot;')
+    //     .replace('&', '&amp;')
+    //     .replace('<', '&lt;')
+    //     .replace('>', '&gt;');
+    //
+    //     $(this).html('');
+    //     $(this).text(html);
+    // });
 });
