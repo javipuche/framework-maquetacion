@@ -324,6 +324,8 @@ El el sistema de rejilla del framework. Se usa conjuntamente con las *utilities 
   <div class="o-layout__item u-1/2 u-2/4@m">Lorem ipsum dolor sit amet.</div>
   <div class="o-layout__item u-1/2 u-2/4@m">Lorem ipsum dolor sit amet.</div>
   <div class="o-layout__item u-1/2 u-2/4@m">Lorem ipsum dolor sit amet.</div>
+  <div class="o-layout__item u-1/2 u-push-2/4@m u-2/4@m">Lorem ipsum dolor sit amet.</div>
+  <div class="o-layout__item u-1/2 u-pull-2/4@m u-2/4@m">Lorem ipsum dolor sit amet.</div>
 </div>
 ```
 
