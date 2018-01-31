@@ -170,18 +170,18 @@ Con este simple ejemplo queda claro que el bloque es la clase en si. El elemento
 
 #### OOCSS
 
-OOCSS es una metodología basada en objetos CSS. Resumiéndodolo mucho se trata de abstraer todo lo máximo posible para poder reaprovechar todo el código posible.
+OOCSS es una metodología basada en objetos CSS. Resumiéndolo mucho se trata de abstraer todo lo máximo posible para poder reaprovechar todo el código posible.
 
 ### Mediaqueries
 
 Mediaqueries por defecto:
 
 ```scss
-$f-mq-breakpoint-s: 544px !default;
-$f-mq-breakpoint-m: 768px !default;
-$f-mq-breakpoint-l: 1024px !default;
-$f-mq-breakpoint-xl: 1200px !default;
-$f-mq-breakpoint-xxl: 1440px !default;
+$f-mq-breakpoint-s: 600px !default;
+$f-mq-breakpoint-m: 900px !default;
+$f-mq-breakpoint-l: 1200px !default;
+$f-mq-breakpoint-xl: 1500px !default;
+$f-mq-breakpoint-xxl: 1800px !default;
 ```
 
 Para usarlas es tan simple como:

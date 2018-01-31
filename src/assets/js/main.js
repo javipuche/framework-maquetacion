@@ -13,17 +13,5 @@ window.$ = window.jquery = jQuery;
 // -----------------------------------------------------------------------------
 
 $(document).ready(function() {
-    // var $code = $('pre code');
-    // $code.each(function() {
-    //     var html = $(this).html();
-    //
-    //     html
-    //     .replace('"', '&quot;')
-    //     .replace('&', '&amp;')
-    //     .replace('<', '&lt;')
-    //     .replace('>', '&gt;');
-    //
-    //     $(this).html('');
-    //     $(this).text(html);
-    // });
+
 });
