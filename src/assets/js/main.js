@@ -2,4 +2,4 @@
 // -----------------------------------------------------------------------------
 
 import 'jquery';
-// import './modules/';
+// import './modules/exampleModule';
