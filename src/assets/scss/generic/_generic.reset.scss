@@ -3,13 +3,6 @@
  */
 
 
-// Variables
-
-$g-reset-spacing-vertical: $f-space-l !default;
-$g-reset-spacing-horizontal: $f-space-l !default;
-
-// Output
-
 body,
 h1, h2, h3, h4, h5, h6,
 blockquote, p, pre,
@@ -21,8 +14,16 @@ fieldset, legend {
   padding: 0;
 }
 
-img,
-svg {
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+picture {
+  display: block;
+}
+
+img, svg {
   max-width: 100%;
   height: auto;
 }
